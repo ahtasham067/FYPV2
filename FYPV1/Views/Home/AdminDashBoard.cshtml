@@ -1,0 +1,2075 @@
+﻿@model FYPV1.ViewModels.AdminDashBoardVM
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <title>
+        CUI Admin Panel
+    </title>
+    <!-- plugins:css-->
+    <link href="~/vendors/ti-icons/css/themify-icons.css" rel="stylesheet" />
+    <link href="vendors/base/vendor.bundle.base.css" rel="stylesheet">
+    <script src="~/JavaScript/TeacherIndex.js"></script>
+    <link href="~/css/Student.css" rel="stylesheet" />
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link href="~/css/style.css" rel="stylesheet" />
+    <!-- endinject -->
+    <link href="~/AdminPanelImages/comsats.jpg" rel="shortcut icon" />
+</head>
+<body>
+    <div class="container-scroller">
+        <!-- partial:partials/_navbar.html -->
+        <nav class="navbar col-lg-15 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                <a class="navbar-brand brand-logo mr-5" href="#">
+                    <img alt="logo" class="mr-2" src="~/AdminPanelImages/comsats.jpg" style=" height: 70px" />
+                </a>
+                <a class="navbar-brand brand-logo-mini" href="#">
+                    <img src="~/AdminPanelImages/comsats.jpg" />
+                </a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+                <button class="navbar-toggler navbar-toggler align-self-center" data-toggle="minimize" type="button">
+                    <span class="ti-view-list">
+                    </span>
+                </button>
+                <ul class="navbar-nav mr-lg-2">
+                    <li class="nav-item nav-search d-none d-lg-block">
+                        <div class="input-group">
+                            <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
+                                <span class="input-group-text" id="search">
+                                    <i class="ti-search">
+                                    </i>
+                                </span>
+                            </div>
+                            <input aria-describedby="search" aria-label="search" class="form-control" id="navbar-search-input" placeholder="Search now" type="text">
+                            </input>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav navbar-nav-right">
+                    <li class="nav-item nav-profile dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="profileDropdown">
+                            <img alt="profile" src="~/AdminPanelImages/human.png" />
+                        </a>
+                        <div aria-labelledby="profileDropdown" class="dropdown-menu dropdown-menu-right navbar-dropdown">
+                            <a class="dropdown-item">
+                                <i class="ti-power-off text-primary">
+                                </i>
+                                Logout
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" data-toggle="offcanvas" type="button">
+                    <span class="ti-view-list">
+                    </span>
+                </button>
+            </div>
+        </nav>
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:partials/_sidebar.html -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="AdminDashBoard.cshtml">
+                            <i class="ti-shield menu-icon">
+                            </i>
+                            <span class="menu-title">
+                                Home
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a aria-controls="ui-basic" aria-expanded="false" class="nav-link" data-toggle="collapse" href="#ui-basic">
+                            <i class="ti-palette menu-icon">
+                            </i>
+                            <span class="menu-title">
+                                Add
+                            </span>
+                            <i class="menu-arrow">
+                            </i>
+                        </a>
+                        <div class="collapse" id="ui-basic">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link AddDomain" href="#">
+                                        Domain
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link AddAlliedField" href="#">
+                                        Allied Field
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link AddSupervisor" href="#">
+                                        Supervisor
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link AddCo-Supervisor" href="#">
+                                        Co-Supervisor
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link AddBatch" href="#">
+                                        Batch
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link AddCampus" href="#">
+                                        Campus
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link AddProgram" href="#">
+                                        Program
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link AddSemesters" href="#">
+                                        Semester
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a aria-controls="ui-basic" aria-expanded="false" class="nav-link" data-toggle="collapse" href="#View">
+                            <i class="ti-palette menu-icon">
+                            </i>
+                            <span class="menu-title">
+                                View
+                            </span>
+                            <i class="menu-arrow">
+                            </i>
+                        </a>
+                        <div class="collapse" id="View">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link ViewDomain" href="#">
+                                        Domain
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link ViewAlliedField" href="#">
+                                        Allied Field
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link ViewSupervisor" href="#">
+                                        Supervisor
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link ViewCo-Supervisor" href="#">
+                                        Co-Supervisor
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link ViewBatch" href="#">
+                                        Batch
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link ViewCampus" href="#">
+                                        Campus
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link ViewProgram" href="#">
+                                        Program
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link ViewSemesters" href="#">
+                                        Semester
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a aria-controls="ui-basic" aria-expanded="false" class="nav-link" data-toggle="collapse" href="#marks">
+                            <i class="ti-palette menu-icon">
+                            </i>
+                            <span class="menu-title">
+                                Update Marks
+                            </span>
+                            <i class="menu-arrow">
+                            </i>
+                        </a>
+                        <div class="collapse" id="marks">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link UpdateSupervisorMarks" href="#">
+                                        Supervisor
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link UpdateInternalMarks" href="#">
+                                        Internal
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link UpdateExternalMarks" href="#">
+                                        External
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link UpdateProposalMarks" href="#">
+                                        Proposal
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link UpdateSrsMarks" href="#">
+                                        SRS
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link UpdateSddMarks" href="#">
+                                        SDD
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a aria-controls="auth" aria-expanded="false" class="nav-link" data-toggle="collapse" href="#auth">
+                            <i class="ti-user menu-icon">
+                            </i>
+                            <span class="menu-title">
+                                User
+                            </span>
+                            <i class="menu-arrow">
+                            </i>
+                        </a>
+                        <div class="collapse" id="auth">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="pages/samples/lock-screen.html">
+                                        Add
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="pages/samples/lock-screen.html">
+                                        Delete
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="pages/samples/lock-screen.html">
+                                        Update
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <!-- partial -->
+            <div class="container backgroungcolor">
+                <!--Domain-->
+                @using (Html.BeginForm("AdminDashBoard", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="container formwidthfontcolor mt-3" id="AddDomainId">
+                        <div class="text-center">
+                            <h1 class="mt-3">
+                                Add Domain
+                            </h1>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputTitle">
+                                <span class="text-danger">
+                                    *
+                                </span>
+                                Name
+                            </label>
+                            @Html.EditorFor(model => model.DomainName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.DomainName, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group text-right">
+                                <button class="btn btn-primary" type="submit">
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+                <!--Add Allied Field-->
+                @using (Html.BeginForm("AdminDashBoard", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="container formwidthfontcolor mt-3" id="AddAlliedFieldId">
+                        <div class="text-center">
+                            <h1 class="mt-3">
+                                Add Allied Field
+                            </h1>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputTitle">
+                                <span class="text-danger">
+                                    *
+                                </span>
+                                Name
+                            </label>
+                            @Html.EditorFor(model => model.AlliedFieldName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AlliedFieldName, "", new { @class = "text-danger" })
+                
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group text-right">
+                                <button class="btn btn-primary" type="submit">
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <!--Supervisor-->
+                @using (Html.BeginForm("AdminDashBoard", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="container formwidthfontcolor" id="AddSupervisorId">
+                        <div class="text-center">
+                            <h1 class="mt-3">
+                                Add Supervisor
+                            </h1>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputTitle">
+                                <span class="text-danger">
+                                    *
+                                </span>
+                                Name
+                            </label>
+                            @Html.EditorFor(model => model.SupervisorName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.SupervisorName, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group text-right">
+                                <button class="btn btn-primary" type="submit">
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <!--Co-Supervisor-->
+                @using (Html.BeginForm("AdminDashBoard", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="container formwidthfontcolor" id="AddCo-SupervisorId1">
+                        <div class="text-center">
+                            <h1 class="mt-3">
+                                Add Co-Supervisor
+                            </h1>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputTitle">
+                                <span class="text-danger">
+                                    *
+                                </span>
+                                Name
+                            </label>e
+                            @Html.EditorFor(model => model.CoSupervisorName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.CoSupervisorName, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group text-right">
+                                <button class="btn btn-primary" type="submit">
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <!--Batch-->
+                @using (Html.BeginForm("AdminDashBoard", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="container formwidthfontcolor" id="AddBatchId">
+                        <div class="text-center">
+                            <h1 class="mt-3">
+                                Add Batch
+                            </h1>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputTitle">
+                                <span class="text-danger">
+                                    *
+                                </span>
+                                Name
+                            </label>
+                            @Html.EditorFor(model => model.BatchName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.BatchName, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group text-right">
+                                <button class="btn btn-primary" type="submit">
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <!--Program-->
+                @using (Html.BeginForm("AdminDashBoard", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="container formwidthfontcolor" id="AddProgramId">
+                        <div class="text-center">
+                            <h1 class="mt-3">
+                                Add Program
+                            </h1>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputTitle">
+                                <span class="text-danger">
+                                    *
+                                </span>
+                                Name
+                            </label>
+                            @Html.EditorFor(model => model.ProgramName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.ProgramName, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group text-right">
+                                <button class="btn btn-primary" type="submit">
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <!--Campus-->
+                @using (Html.BeginForm("AdminDashBoard", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="container formwidthfontcolor" id="AddCampusId">
+                        <div class="text-center">
+                            <h1 class="mt-3">
+                                Add Campus
+                            </h1>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputTitle">
+                                <span class="text-danger">
+                                    *
+                                </span>
+                                Name
+                            </label>
+                            @Html.EditorFor(model => model.SemesterNumber, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.CampusName, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group text-right">
+                                <button class="btn btn-primary" type="submit">
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <!--Supervisor Marks-->
+                @using (Html.BeginForm("AdminDashBoard", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="container rounded formwidthfontcolor" id="UpdateSupervisorMarksId">
+                        <form>
+                            <div class="text-center">
+                                <h1 class="mt-3">
+                                    Update Supervisor Marks
+                                </h1>
+                            </div>
+                            <!--Documentation-->
+                            <div class="form-group">
+                                <label for="inputTitle">
+                                    <span class="text-danger">
+                                        *
+                                    </span>
+                                    Documentation
+                                </label>
+                                <input class="form-control" id="inputTitle" placeholder="" type="text">
+                                </input>
+                            </div>
+                            <!--Implementation-->
+                            <div class="form-group">
+                                <label for="inputTitle">
+                                    <span class="text-danger">
+                                        *
+                                    </span>
+                                    Implementation
+                                </label>
+                                <input class="form-control" id="inputTitle" placeholder="" type="text">
+                                </input>
+                            </div>
+                            <!--Fyp Knowledge-->
+                            <div class="form-group">
+                                <label for="inputTitle">
+                                    <span class="text-danger">
+                                        *
+                                    </span>
+                                    Fyp Knowledge
+                                </label>
+                                <input class="form-control" id="inputTitle" placeholder="" type="text">
+                                </input>
+                            </div>
+                            <!--Presentation On Skill-->
+                            <div class="form-group">
+                                <label for="inputTitle">
+                                    <span class="text-danger">
+                                        *
+                                    </span>
+                                    Presentation On Skill
+                                </label>
+                                <input class="form-control" id="inputTitle" placeholder="" type="text">
+                                </input>
+                            </div>
+                            <!--OverAll Contribution-->
+                            <div class="form-group">
+                                <label for="inputTitle">
+                                    <span class="text-danger">
+                                        *
+                                    </span>
+                                    OverAll Contribution
+                                </label>
+                                <input class="form-control" id="inputTitle" placeholder="" type="text">
+                                </input>
+                            </div>
+                            <!--Total Marks-->
+                            <div class="form-group">
+                                <label for="inputTitle">
+                                    <span class="text-danger">
+                                        *
+                                    </span>
+                                    Total Marks
+                                </label>
+                                <input class="form-control" id="inputTitle" placeholder="" type="text">
+                                </input>
+                            </div>
+                            <!--Buttons Save and Documents Latter-->
+                            <div class="form-row">
+                                <div class="form-group text-right">
+                                    <button class="btn btn-primary" type="submit">
+                                        Submit
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                }
+                <!--Add Semester-->
+                @using (Html.BeginForm("AdminDashBoard", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="container rounded formwidthfontcolor" id="AddSemestersId">
+                        <div class="text-center">
+                            <h1 class="mt-3">
+                                Add Semesters
+                            </h1>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputTitle">
+                                <span class="text-danger">
+                                    *
+                                </span>
+                                Semester
+                            </label>
+                            @Html.EditorFor(model => model.SemesterNumber, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.SemesterNumber, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group text-right">
+                                <button class="btn btn-primary" type="submit">
+                                    Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <!--Internal Marks-->
+                @using (Html.BeginForm("AdminDashBoard", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="container rounded formwidthfontcolor" id="UpdateInternalMarksId">
+                        <form>
+                            <div class="text-center">
+                                <h1 class="mt-3">
+                                    Update Internal Marks
+                                </h1>
+                            </div>
+                            <!--Documentation-->
+                            <div class="form-group">
+                                <label for="inputTitle">
+                                    <span class="text-danger">
+                                        *
+                                    </span>
+                                    Documentation
+                                </label>
+                                <input class="form-control" id="inputTitle" placeholder="" type="text">
+                                </input>
+                            </div>
+                            <!--Implementation-->
+                            <div class="form-group">
+                                <label for="inputTitle">
+                                    <span class="text-danger">
+                                        *
+                                    </span>
+                                    Implementation
+                                </label>
+                                <input class="form-control" id="inputTitle" placeholder="" type="text">
+                                </input>
+                            </div>
+                            <!--Fyp Knowledge-->
+                            <div class="form-group">
+                                <label for="inputTitle">
+                                    <span class="text-danger">
+                                        *
+                                    </span>
+                                    Fyp Knowledge
+                                </label>
+                                <input class="form-control" id="inputTitle" placeholder="" type="text">
+                                </input>
+                            </div>
+                            <!--Presentation On Skill-->
+                            <div class="form-group">
+                                <label for="inputTitle">
+                                    <span class="text-danger">
+                                        *
+                                    </span>
+                                    Presentation On Skill
+                                </label>
+                                <input class="form-control" id="inputTitle" placeholder="" type="text">
+                                </input>
+                            </div>
+                            <!--Total Marks-->
+                            <div class="form-group">
+                                <label for="inputTitle">
+                                    <span class="text-danger">
+                                        *
+                                    </span>
+                                    Total Marks
+                                </label>
+                                <input class="form-control" id="inputTitle" placeholder="" type="text">
+                                </input>
+                            </div>
+                            <!--Buttons Save and Documents Latter-->
+                            <div class="form-row">
+                                <div class="form-group text-right">
+                                    <button class="btn btn-primary" type="submit">
+                                        Submit
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                }
+                <!--External Marks-->
+                @using (Html.BeginForm("AdminDashBoard", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="container rounded formwidthfontcolor" id="UpdateExternalMarksId">
+                        <form>
+                            <div class="text-center">
+                                <h1 class="mt-3">
+                                    Update External Marks
+                                </h1>
+                            </div>
+                            <!--Documentation-->
+                            <div class="form-group">
+                                <label for="inputTitle">
+                                    <span class="text-danger">
+                                        *
+                                    </span>
+                                    Documentation
+                                </label>
+                                <input class="form-control" id="inputTitle" placeholder="" type="text">
+                                </input>
+                            </div>
+                            <!--Implementation-->
+                            <div class="form-group">
+                                <label for="inputTitle">
+                                    <span class="text-danger">
+                                        *
+                                    </span>
+                                    Implementation
+                                </label>
+                                <input class="form-control" id="inputTitle" placeholder="" type="text">
+                                </input>
+                            </div>
+                            <!--Fyp Knowledge-->
+                            <div class="form-group">
+                                <label for="inputTitle">
+                                    <span class="text-danger">
+                                        *
+                                    </span>
+                                    Fyp Knowledge
+                                </label>
+                                <input class="form-control" id="inputTitle" placeholder="" type="text">
+                                </input>
+                            </div>
+                            <!--Presentation On Skill-->
+                            <div class="form-group">
+                                <label for="inputTitle">
+                                    <span class="text-danger">
+                                        *
+                                    </span>
+                                    Presentation On Skill
+                                </label>
+                                <input class="form-control" id="inputTitle" placeholder="" type="text">
+                                </input>
+                            </div>
+                            <!--Total Marks-->
+                            <div class="form-group">
+                                <label for="inputTitle">
+                                    <span class="text-danger">
+                                        *
+                                    </span>
+                                    Total Marks
+                                </label>
+                                <input class="form-control" id="inputTitle" placeholder="" type="text">
+                                </input>
+                            </div>
+                            <!--Buttons Save and Documents Latter-->
+                            <div class="form-row">
+                                <div class="form-group text-right">
+                                    <button class="btn btn-primary" type="submit">
+                                        Submit
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                }
+                <!--Proposal Marks-->
+                @using (Html.BeginForm("AdminDashBoard", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="container rounded formwidthfontcolor" id="UpdateProposalMarksId">
+                        <form>
+                            <div class="text-center">
+                                <h1 class="mt-3">
+                                    Update Proposal Marks
+                                </h1>
+                            </div>
+                            <!--Idea-->
+                            <div class="form-group">
+                                <label for="inputTitle">
+                                    <span class="text-danger">
+                                        *
+                                    </span>
+                                    Idea
+                                </label>
+                                <input class="form-control" id="inputTitle" placeholder="" type="text">
+                                </input>
+                            </div>
+                            <!--Scope-->
+                            <div class="form-group">
+                                <label for="inputTitle">
+                                    <span class="text-danger">
+                                        *
+                                    </span>
+                                    Scope
+                                </label>
+                                <input class="form-control" id="inputTitle" placeholder="" type="text">
+                                </input>
+                            </div>
+                            <!--Domain Knowledge-->
+                            <div class="form-group">
+                                <label for="inputTitle">
+                                    <span class="text-danger">
+                                        *
+                                    </span>
+                                    Domain Knowledge
+                                </label>
+                                <input class="form-control" id="inputTitle" placeholder="" type="text">
+                                </input>
+                            </div>
+                            <!--Documentation Completion-->
+                            <div class="form-group">
+                                <label for="inputTitle">
+                                    <span class="text-danger">
+                                        *
+                                    </span>
+                                    Documentation Completion
+                                </label>
+                                <input class="form-control" id="inputTitle" placeholder="" type="text">
+                                </input>
+                            </div>
+                            <!--Total Marks-->
+                            <div class="form-group">
+                                <label for="inputTitle">
+                                    <span class="text-danger">
+                                        *
+                                    </span>
+                                    Total Marks
+                                </label>
+                                <input class="form-control" id="inputTitle" placeholder="" type="text">
+                                </input>
+                            </div>
+                            <!--Buttons Save and Documents Latter-->
+                            <div class="form-row">
+                                <div class="form-group text-right">
+                                    <button class="btn btn-primary" type="submit">
+                                        Submit
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                }
+                <!--SRS Marks-->
+                @using (Html.BeginForm("AdminDashBoard", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="container rounded formwidthfontcolor" id="UpdateSrsMarksId">
+                        <form>
+                            <div class="text-center">
+                                <h1 class="mt-3">
+                                    Update SRS Marks
+                                </h1>
+                            </div>
+                            <!--Functional Requirements -->
+                            <div class="form-group">
+                                <label for="inputTitle">
+                                    <span class="text-danger">
+                                        *
+                                    </span>
+                                    Functional Requirements
+                                </label>
+                                <input class="form-control" id="inputTitle" placeholder="" type="text">
+                                </input>
+                            </div>
+                            <!--Non-Functional Requirements-->
+                            <div class="form-group">
+                                <label for="inputTitle">
+                                    <span class="text-danger">
+                                        *
+                                    </span>
+                                    Non-Functional Requirements
+                                </label>
+                                <input class="form-control" id="inputTitle" placeholder="" type="text">
+                                </input>
+                            </div>
+                            <!--UseCases-->
+                            <div class="form-group">
+                                <label for="inputTitle">
+                                    <span class="text-danger">
+                                        *
+                                    </span>
+                                    UseCases
+                                </label>
+                                <input class="form-control" id="inputTitle" placeholder="" type="text">
+                                </input>
+                            </div>
+                            <!--Total Marks-->
+                            <div class="form-group">
+                                <label for="inputTitle">
+                                    <span class="text-danger">
+                                        *
+                                    </span>
+                                    Total Marks
+                                </label>
+                                <input class="form-control" id="inputTitle" placeholder="" type="text">
+                                </input>
+                            </div>
+                            <!--Buttons Save and Documents Latter-->
+                            <div class="form-row">
+                                <div class="form-group text-right">
+                                    <button class="btn btn-primary" type="submit">
+                                        Submit
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                }
+                <!--SDD Marks-->
+                @using (Html.BeginForm("AdminDashBoard", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="container rounded formwidthfontcolor" id="UpdateSddMarksId">
+                        <form>
+                            <div class="text-center">
+                                <h1 class="mt-3">
+                                    Update SDD Marks
+                                </h1>
+                            </div>
+                            <!--Sequence Diagram -->
+                            <div class="form-group">
+                                <label for="inputTitle">
+                                    <span class="text-danger">
+                                        *
+                                    </span>
+                                    Sequence Diagram
+                                </label>
+                                <input class="form-control" id="inputTitle" placeholder="" type="text">
+                                </input>
+                            </div>
+                            <!--Activity Diagram-->
+                            <div class="form-group">
+                                <label for="inputTitle">
+                                    <span class="text-danger">
+                                        *
+                                    </span>
+                                    Activity Diagram
+                                </label>
+                                <input class="form-control" id="inputTitle" placeholder="" type="text">
+                                </input>
+                            </div>
+                            <!--Class Diagram-->
+                            <div class="form-group">
+                                <label for="inputTitle">
+                                    <span class="text-danger">
+                                        *
+                                    </span>
+                                    Class Diagram
+                                </label>
+                                <input class="form-control" id="inputTitle" placeholder="" type="text">
+                                </input>
+                            </div>
+                            <!--Data Model-->
+                            <div class="form-group">
+                                <label for="inputTitle">
+                                    <span class="text-danger">
+                                        *
+                                    </span>
+                                    Data Model
+                                </label>
+                                <input class="form-control" id="inputTitle" placeholder="" type="text">
+                                </input>
+                            </div>
+                            <!--Other Diagram as Requirements-->
+                            <div class="form-group">
+                                <label for="inputTitle">
+                                    <span class="text-danger">
+                                        *
+                                    </span>
+                                    Other Diagram as Requirements
+                                </label>
+                                <input class="form-control" id="inputTitle" placeholder="" type="text">
+                                </input>
+                            </div>
+                            <!--Total Marks-->
+                            <div class="form-group">
+                                <label for="inputTitle">
+                                    <span class="text-danger">
+                                        *
+                                    </span>
+                                    Total Marks
+                                </label>
+                                <input class="form-control" id="inputTitle" placeholder="" type="text">
+                                </input>
+                            </div>
+                            <!--Buttons Save and Documents Latter-->
+                            <div class="form-row">
+                                <div class="form-group text-right">
+                                    <button class="btn btn-primary" type="submit">
+                                        Submit
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                }
+                <!--View Domain-->
+                @using (Html.BeginForm("AdminDashBoard", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="container formwidthfontcolor" id="ViewDomainId">
+                        <div class="text-center">
+                            <h1 class="mt-3">
+                                View Domain
+                            </h1>
+                        </div>
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">
+                                        Sr#
+                                    </th>
+                                    <th scope="col">
+                                        Domain
+                                    </th>
+                                    <th scope="col">
+                                        Details
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">
+                                        1
+                                    </th>
+                                    <td>
+                                        Mark
+                                    </td>
+                                    <td>
+                                        Otto
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        2
+                                    </th>
+                                    <td>
+                                        Jacob
+                                    </td>
+                                    <td>
+                                        Thornton
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        3
+                                    </th>
+                                    <td>
+                                        Larry
+                                    </td>
+                                    <td>
+                                        the Bird
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                <!--View AlliedField-->
+                @using (Html.BeginForm("AdminDashBoard", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="container formwidthfontcolor" id="ViewAlliedFieldId">
+                        <div class="text-center">
+                            <h1 class="mt-3">
+                                View Allied Field
+                            </h1>
+                        </div>
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">
+                                        Sr#
+                                    </th>
+                                    <th scope="col">
+                                        Allied Field
+                                    </th>
+                                    <th scope="col">
+                                        Details
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">
+                                        1
+                                    </th>
+                                    <td>
+                                        Mark
+                                    </td>
+                                    <td>
+                                        Otto
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        2
+                                    </th>
+                                    <td>
+                                        Jacob
+                                    </td>
+                                    <td>
+                                        Thornton
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        3
+                                    </th>
+                                    <td>
+                                        Larry
+                                    </td>
+                                    <td>
+                                        the Bird
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                <!--View Supervisor-->
+                @using (Html.BeginForm("AdminDashBoard", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="container formwidthfontcolor" id="ViewSupervisorId">
+                        <div class="text-center">
+                            <h1 class="mt-3">
+                                View Supervisor
+                            </h1>
+                        </div>
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">
+                                        Sr#
+                                    </th>
+                                    <th scope="col">
+                                        Name
+                                    </th>
+                                    <th scope="col">
+                                        Details
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">
+                                        1
+                                    </th>
+                                    <td>
+                                        Mark
+                                    </td>
+                                    <td>
+                                        Otto
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        2
+                                    </th>
+                                    <td>
+                                        Jacob
+                                    </td>
+                                    <td>
+                                        Thornton
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        3
+                                    </th>
+                                    <td>
+                                        Larry
+                                    </td>
+                                    <td>
+                                        the Bird
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                <!--View Co-Supervisor-->
+                @using (Html.BeginForm("AdminDashBoard", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="container formwidthfontcolor" id="ViewCo-SupervisorId">
+                        <div class="text-center">
+                            <h1 class="mt-3">
+                                View Co-Supervisor
+                            </h1>
+                        </div>
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">
+                                        Sr#
+                                    </th>
+                                    <th scope="col">
+                                        Name
+                                    </th>
+                                    <th scope="col">
+                                        Details
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">
+                                        1
+                                    </th>
+                                    <td>
+                                        Mark
+                                    </td>
+                                    <td>
+                                        Otto
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        2
+                                    </th>
+                                    <td>
+                                        Jacob
+                                    </td>
+                                    <td>
+                                        Thornton
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        3
+                                    </th>
+                                    <td>
+                                        Larry
+                                    </td>
+                                    <td>
+                                        the Bird
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                <!--View Batch-->
+                @using (Html.BeginForm("AdminDashBoard", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="container formwidthfontcolor" id="ViewBatchId">
+                        <div class="text-center">
+                            <h1 class="mt-3">
+                                View Batch
+                            </h1>
+                        </div>
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">
+                                        Sr#
+                                    </th>
+                                    <th scope="col">
+                                        Batch
+                                    </th>
+                                    <th scope="col">
+                                        Details
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">
+                                        1
+                                    </th>
+                                    <td>
+                                        Mark
+                                    </td>
+                                    <td>
+                                        Otto
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        2
+                                    </th>
+                                    <td>
+                                        Jacob
+                                    </td>
+                                    <td>
+                                        Thornton
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        3
+                                    </th>
+                                    <td>
+                                        Larry
+                                    </td>
+                                    <td>
+                                        the Bird
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                <!--View Campus-->
+                @using (Html.BeginForm("AdminDashBoard", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="container formwidthfontcolor" id="ViewCampusId">
+                        <div class="text-center">
+                            <h1 class="mt-3">
+                                View Campus
+                            </h1>
+                        </div>
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">
+                                        Sr#
+                                    </th>
+                                    <th scope="col">
+                                        Campus
+                                    </th>
+                                    <th scope="col">
+                                        Details
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">
+                                        1
+                                    </th>
+                                    <td>
+                                        Mark
+                                    </td>
+                                    <td>
+                                        Otto
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        2
+                                    </th>
+                                    <td>
+                                        Jacob
+                                    </td>
+                                    <td>
+                                        Thornton
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        3
+                                    </th>
+                                    <td>
+                                        Larry
+                                    </td>
+                                    <td>
+                                        the Bird
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                <!--View Program-->
+                @using (Html.BeginForm("AdminDashBoard", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="container formwidthfontcolor" id="ViewProgramId">
+                        <div class="text-center">
+                            <h1 class="mt-3">
+                                View Program
+                            </h1>
+                        </div>
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">
+                                        Sr#
+                                    </th>
+                                    <th scope="col">
+                                        Program
+                                    </th>
+                                    <th scope="col">
+                                        Details
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">
+                                        1
+                                    </th>
+                                    <td>
+                                        Mark
+                                    </td>
+                                    <td>
+                                        Otto
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        2
+                                    </th>
+                                    <td>
+                                        Jacob
+                                    </td>
+                                    <td>
+                                        Thornton
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        3
+                                    </th>
+                                    <td>
+                                        Larry
+                                    </td>
+                                    <td>
+                                        the Bird
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                <!--View Semester-->
+                @using (Html.BeginForm("AdminDashBoard", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="container rounded formwidthfontcolor" id="ViewSemestersId">
+                        <div class="text-center">
+                            <h1 class="mt-3">
+                                View Semesters
+                            </h1>
+                        </div>
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">
+                                        Sr#
+                                    </th>
+                                    <th scope="col">
+                                        Semester
+                                    </th>
+                                    <th scope="col">
+                                        Details
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">
+                                        1
+                                    </th>
+                                    <td>
+                                        Mark
+                                    </td>
+                                    <td>
+                                        Otto
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        2
+                                    </th>
+                                    <td>
+                                        Jacob
+                                    </td>
+                                    <td>
+                                        Thornton
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        3
+                                    </th>
+                                    <td>
+                                        Larry
+                                    </td>
+                                    <td>
+                                        the Bird
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                    <div class="row mt-3">
+                        <div class="col footerbackgroundcolor">
+                            <div class="text-center mt-3 footertextcolor">
+                                <a href="#">
+                                    FYPOnline,
+                                </a>
+                                Principal Seat © Batch-15-COMSATS ®
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+        <!-- container-scroller -->
+        <!-- plugins:js -->
+        <script src="~/vendors/base/vendor.bundle.base.js"></script>
+
+        <!-- endinject -->
+        <!-- Plugin js for this page-->
+        <script src="~/vendors/chart.js/Chart.min.js"></script>
+        <!-- End plugin js for this page-->
+        <!-- inject:js -->
+        <script src="~/js/off-canvas.js"></script>
+        <script src="~/js/hoverable-collapse.js"></script>
+        <script src="~/js/template.js"></script>
+        <script src="~/js/todolist.js"></script>
+        <!-- endinject -->
+        <!-- Custom js for this page-->
+        <script src="~/js/dashboard.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+                $("#AddDomainId").show();
+                $("#AddAlliedFieldId").hide();
+                $("#AddSupervisorId").hide();
+                $("#AddCo-SupervisorId1").hide();
+                $("#AddBatchId").hide();
+                $("#AddCampusId").hide();
+                $("#AddProgramId").hide();
+                $("#AddSemestersId").hide();
+                $("#UpdateSupervisorMarksId").hide();
+                $("#UpdateInternalMarksId").hide();
+                $("#UpdateExternalMarksId").hide();
+                $("#UpdateProposalMarksId").hide();
+                $("#UpdateSrsMarksId").hide();
+                $("#UpdateSddMarksId").hide();
+                $("#ViewDomainId").hide();
+                $("#ViewAlliedFieldId").hide();
+                $("#ViewSupervisorId").hide();
+                $("#ViewCo-SupervisorId").hide();
+                $("#ViewBatchId").hide();
+                $("#ViewCampusId").hide();
+                $("#ViewProgramId").hide();
+                $("#ViewSemestersId").hide();
+
+            });
+            $(".AddDomain").click(function () {
+                $("#AddDomainId").show();
+                $("#AddAlliedFieldId").hide();
+                $("#AddSupervisorId").hide();
+                $("#AddCo-SupervisorId1").hide();
+                $("#AddBatchId").hide();
+                $("#AddCampusId").hide();
+                $("#AddProgramId").hide();
+                $("#AddSemestersId").hide();
+                $("#UpdateSupervisorMarksId").hide();
+                $("#UpdateInternalMarksId").hide();
+                $("#UpdateExternalMarksId").hide();
+                $("#UpdateProposalMarksId").hide();
+                $("#UpdateSrsMarksId").hide();
+                $("#UpdateSddMarksId").hide();
+                $("#ViewDomainId").hide();
+                $("#ViewAlliedFieldId").hide();
+                $("#ViewSupervisorId").hide();
+                $("#ViewCo-SupervisorId").hide();
+                $("#ViewBatchId").hide();
+                $("#ViewCampusId").hide();
+                $("#ViewProgramId").hide();
+                $("#ViewSemestersId").hide();
+            });
+            $(".AddAlliedField").click(function () {
+                $("#AddDomainId").hide();
+                $("#AddAlliedFieldId").show();
+                $("#AddSupervisorId").hide();
+                $("#AddCo-SupervisorId1").hide();
+                $("#AddBatchId").hide();
+                $("#AddCampusId").hide();
+                $("#AddProgramId").hide();
+                $("#AddSemestersId").hide();
+                $("#UpdateSupervisorMarksId").hide();
+                $("#UpdateInternalMarksId").hide();
+                $("#UpdateExternalMarksId").hide();
+                $("#UpdateProposalMarksId").hide();
+                $("#UpdateSrsMarksId").hide();
+                $("#UpdateSddMarksId").hide();
+                $("#ViewDomainId").hide();
+                $("#ViewAlliedFieldId").hide();
+                $("#ViewSupervisorId").hide();
+                $("#ViewCo-SupervisorId").hide();
+                $("#ViewBatchId").hide();
+                $("#ViewCampusId").hide();
+                $("#ViewProgramId").hide();
+                $("#ViewSemestersId").hide();
+            });
+            $(".AddSupervisor").click(function () {
+                $("#AddDomainId").hide();
+                $("#AddAlliedFieldId").hide();
+                $("#AddSupervisorId").show();
+                $("#AddCo-SupervisorId1").hide();
+                $("#AddBatchId").hide();
+                $("#AddCampusId").hide();
+                $("#AddProgramId").hide();
+                $("#AddSemestersId").hide();
+                $("#UpdateSupervisorMarksId").hide();
+                $("#UpdateInternalMarksId").hide();
+                $("#UpdateExternalMarksId").hide();
+                $("#UpdateProposalMarksId").hide();
+                $("#UpdateSrsMarksId").hide();
+                $("#UpdateSddMarksId").hide();
+                $("#ViewDomainId").hide();
+                $("#ViewAlliedFieldId").hide();
+                $("#ViewSupervisorId").hide();
+                $("#ViewCo-SupervisorId").hide();
+                $("#ViewBatchId").hide();
+                $("#ViewCampusId").hide();
+                $("#ViewProgramId").hide();
+                $("#ViewSemestersId").hide();
+            });
+            $(".AddCo-Supervisor").click(function () {
+                $("#AddDomainId").hide();
+                $("#AddAlliedFieldId").hide();
+                $("#AddSupervisorId").hide();
+                $("#AddCo-SupervisorId1").show();
+                $("#AddBatchId").hide();
+                $("#AddCampusId").hide();
+                $("#AddProgramId").hide();
+                $("#AddSemestersId").hide();
+                $("#UpdateSupervisorMarksId").hide();
+                $("#UpdateInternalMarksId").hide();
+                $("#UpdateExternalMarksId").hide();
+                $("#UpdateProposalMarksId").hide();
+                $("#UpdateSrsMarksId").hide();
+                $("#UpdateSddMarksId").hide();
+                $("#ViewDomainId").hide();
+                $("#ViewAlliedFieldId").hide();
+                $("#ViewSupervisorId").hide();
+                $("#ViewCo-SupervisorId").hide();
+                $("#ViewBatchId").hide();
+                $("#ViewCampusId").hide();
+                $("#ViewProgramId").hide();
+                $("#ViewSemestersId").hide();
+            });
+            $(".AddBatch").click(function () {
+                $("#AddDomainId").hide();
+                $("#AddAlliedFieldId").hide();
+                $("#AddSupervisorId").hide();
+                $("#AddCo-SupervisorId1").hide();
+                $("#AddBatchId").show();
+                $("#AddCampusId").hide();
+                $("#AddProgramId").hide();
+                $("#AddSemestersId").hide();
+                $("#UpdateSupervisorMarksId").hide();
+                $("#UpdateInternalMarksId").hide();
+                $("#UpdateExternalMarksId").hide();
+                $("#UpdateProposalMarksId").hide();
+                $("#UpdateSrsMarksId").hide();
+                $("#UpdateSddMarksId").hide();
+                $("#ViewDomainId").hide();
+                $("#ViewAlliedFieldId").hide();
+                $("#ViewSupervisorId").hide();
+                $("#ViewCo-SupervisorId").hide();
+                $("#ViewBatchId").hide();
+                $("#ViewCampusId").hide();
+                $("#ViewProgramId").hide();
+                $("#ViewSemestersId").hide();
+            });
+            $(".AddCampus").click(function () {
+                $("#AddDomainId").hide();
+                $("#AddAlliedFieldId").hide();
+                $("#AddSupervisorId").hide();
+                $("#AddCo-SupervisorId1").hide();
+                $("#AddBatchId").hide();
+                $("#AddCampusId").show();
+                $("#AddProgramId").hide();
+                $("#AddSemestersId").hide();
+                $("#UpdateSupervisorMarksId").hide();
+                $("#UpdateInternalMarksId").hide();
+                $("#UpdateExternalMarksId").hide();
+                $("#UpdateProposalMarksId").hide();
+                $("#UpdateSrsMarksId").hide();
+                $("#UpdateSddMarksId").hide();
+                $("#ViewDomainId").hide();
+                $("#ViewAlliedFieldId").hide();
+                $("#ViewSupervisorId").hide();
+                $("#ViewCo-SupervisorId").hide();
+                $("#ViewBatchId").hide();
+                $("#ViewCampusId").hide();
+                $("#ViewProgramId").hide();
+                $("#ViewSemestersId").hide();
+            });
+            $(".AddProgram").click(function () {
+                $("#AddDomainId").hide();
+                $("#AddAlliedFieldId").hide();
+                $("#AddSupervisorId").hide();
+                $("#AddCo-SupervisorId1").hide();
+                $("#AddBatchId").hide();
+                $("#AddCampusId").hide();
+                $("#AddProgramId").show();
+                $("#AddSemestersId").hide();
+                $("#UpdateSupervisorMarksId").hide();
+                $("#UpdateInternalMarksId").hide();
+                $("#UpdateExternalMarksId").hide();
+                $("#UpdateProposalMarksId").hide();
+                $("#UpdateSrsMarksId").hide();
+                $("#UpdateSddMarksId").hide();
+                $("#ViewDomainId").hide();
+                $("#ViewAlliedFieldId").hide();
+                $("#ViewSupervisorId").hide();
+                $("#ViewCo-SupervisorId").hide();
+                $("#ViewBatchId").hide();
+                $("#ViewCampusId").hide();
+                $("#ViewProgramId").hide();
+                $("#ViewSemestersId").hide();
+            });
+            $(".AddSemesters").click(function () {
+                $("#AddDomainId").hide();
+                $("#AddAlliedFieldId").hide();
+                $("#AddSupervisorId").hide();
+                $("#AddCo-SupervisorId1").hide();
+                $("#AddBatchId").hide();
+                $("#AddCampusId").hide();
+                $("#AddProgramId").hide();
+                $("#AddSemestersId").show();
+                $("#UpdateSupervisorMarksId").hide();
+                $("#UpdateInternalMarksId").hide();
+                $("#UpdateExternalMarksId").hide();
+                $("#UpdateProposalMarksId").hide();
+                $("#UpdateSrsMarksId").hide();
+                $("#UpdateSddMarksId").hide();
+                $("#ViewDomainId").hide();
+                $("#ViewAlliedFieldId").hide();
+                $("#ViewSupervisorId").hide();
+                $("#ViewCo-SupervisorId").hide();
+                $("#ViewBatchId").hide();
+                $("#ViewCampusId").hide();
+                $("#ViewProgramId").hide();
+                $("#ViewSemestersId").hide();
+            });
+            $(".UpdateSupervisorMarks").click(function () {
+                $("#AddDomainId").hide();
+                $("#AddAlliedFieldId").hide();
+                $("#AddSupervisorId").hide();
+                $("#AddCo-SupervisorId1").hide();
+                $("#AddBatchId").hide();
+                $("#AddCampusId").hide();
+                $("#AddProgramId").hide();
+                $("#AddSemestersId").hide();
+                $("#UpdateSupervisorMarksId").show();
+                $("#UpdateInternalMarksId").hide();
+                $("#UpdateExternalMarksId").hide();
+                $("#UpdateProposalMarksId").hide();
+                $("#UpdateSrsMarksId").hide();
+                $("#UpdateSddMarksId").hide();
+                $("#ViewDomainId").hide();
+                $("#ViewAlliedFieldId").hide();
+                $("#ViewSupervisorId").hide();
+                $("#ViewCo-SupervisorId").hide();
+                $("#ViewBatchId").hide();
+                $("#ViewCampusId").hide();
+                $("#ViewProgramId").hide();
+                $("#ViewSemestersId").hide();
+            });
+            $(".UpdateInternalMarks").click(function () {
+                $("#AddDomainId").hide();
+                $("#AddAlliedFieldId").hide();
+                $("#AddSupervisorId").hide();
+                $("#AddCo-SupervisorId1").hide();
+                $("#AddBatchId").hide();
+                $("#AddCampusId").hide();
+                $("#AddProgramId").hide();
+                $("#AddSemestersId").hide();
+                $("#UpdateSupervisorMarksId").hide();
+                $("#UpdateInternalMarksId").show();
+                $("#UpdateExternalMarksId").hide();
+                $("#UpdateProposalMarksId").hide();
+                $("#UpdateSrsMarksId").hide();
+                $("#UpdateSddMarksId").hide();
+                $("#ViewDomainId").hide();
+                $("#ViewAlliedFieldId").hide();
+                $("#ViewSupervisorId").hide();
+                $("#ViewCo-SupervisorId").hide();
+                $("#ViewBatchId").hide();
+                $("#ViewCampusId").hide();
+                $("#ViewProgramId").hide();
+                $("#ViewSemestersId").hide();
+            });
+            $(".UpdateExternalMarks").click(function () {
+                $("#AddDomainId").hide();
+                $("#AddAlliedFieldId").hide();
+                $("#AddSupervisorId").hide();
+                $("#AddCo-SupervisorId1").hide();
+                $("#AddBatchId").hide();
+                $("#AddCampusId").hide();
+                $("#AddProgramId").hide();
+                $("#AddSemestersId").hide();
+                $("#UpdateSupervisorMarksId").hide();
+                $("#UpdateInternalMarksId").hide();
+                $("#UpdateExternalMarksId").show();
+                $("#UpdateProposalMarksId").hide();
+                $("#UpdateSrsMarksId").hide();
+                $("#UpdateSddMarksId").hide();
+                $("#ViewDomainId").hide();
+                $("#ViewAlliedFieldId").hide();
+                $("#ViewSupervisorId").hide();
+                $("#ViewCo-SupervisorId").hide();
+                $("#ViewBatchId").hide();
+                $("#ViewCampusId").hide();
+                $("#ViewProgramId").hide();
+                $("#ViewSemestersId").hide();
+            });
+            $(".UpdateProposalMarks").click(function () {
+                $("#AddDomainId").hide();
+                $("#AddAlliedFieldId").hide();
+                $("#AddSupervisorId").hide();
+                $("#AddCo-SupervisorId1").hide();
+                $("#AddBatchId").hide();
+                $("#AddCampusId").hide();
+                $("#AddProgramId").hide();
+                $("#AddSemestersId").hide();
+                $("#UpdateSupervisorMarksId").hide();
+                $("#UpdateInternalMarksId").hide();
+                $("#UpdateExternalMarksId").hide();
+                $("#UpdateProposalMarksId").show();
+                $("#UpdateSrsMarksId").hide();
+                $("#UpdateSddMarksId").hide();
+                $("#ViewDomainId").hide();
+                $("#ViewAlliedFieldId").hide();
+                $("#ViewSupervisorId").hide();
+                $("#ViewCo-SupervisorId").hide();
+                $("#ViewBatchId").hide();
+                $("#ViewCampusId").hide();
+                $("#ViewProgramId").hide();
+                $("#ViewSemestersId").hide();
+            });
+            $(".UpdateSrsMarks").click(function () {
+                $("#AddDomainId").hide();
+                $("#AddAlliedFieldId").hide();
+                $("#AddSupervisorId").hide();
+                $("#AddCo-SupervisorId1").hide();
+                $("#AddBatchId").hide();
+                $("#AddCampusId").hide();
+                $("#AddProgramId").hide();
+                $("#AddSemestersId").hide();
+                $("#UpdateSupervisorMarksId").hide();
+                $("#UpdateInternalMarksId").hide();
+                $("#UpdateExternalMarksId").hide();
+                $("#UpdateProposalMarksId").hide();
+                $("#UpdateSrsMarksId").show();
+                $("#UpdateSddMarksId").hide();
+                $("#ViewDomainId").hide();
+                $("#ViewAlliedFieldId").hide();
+                $("#ViewSupervisorId").hide();
+                $("#ViewCo-SupervisorId").hide();
+                $("#ViewBatchId").hide();
+                $("#ViewCampusId").hide();
+                $("#ViewProgramId").hide();
+                $("#ViewSemestersId").hide();
+            });
+            $(".UpdateSddMarks").click(function () {
+                $("#AddDomainId").hide();
+                $("#AddAlliedFieldId").hide();
+                $("#AddSupervisorId").hide();
+                $("#AddCo-SupervisorId1").hide();
+                $("#AddBatchId").hide();
+                $("#AddCampusId").hide();
+                $("#AddProgramId").hide();
+                $("#AddSemestersId").hide();
+                $("#UpdateSupervisorMarksId").hide();
+                $("#UpdateInternalMarksId").hide();
+                $("#UpdateExternalMarksId").hide();
+                $("#UpdateProposalMarksId").hide();
+                $("#UpdateSrsMarksId").hide();
+                $("#UpdateSddMarksId").show();
+                $("#ViewDomainId").hide();
+                $("#ViewAlliedFieldId").hide();
+                $("#ViewSupervisorId").hide();
+                $("#ViewCo-SupervisorId").hide();
+                $("#ViewBatchId").hide();
+                $("#ViewCampusId").hide();
+                $("#ViewProgramId").hide();
+                $("#ViewSemestersId").hide();
+            });
+            $(".ViewDomain").click(function () {
+                $("#AddDomainId").hide();
+                $("#AddAlliedFieldId").hide();
+                $("#AddSupervisorId").hide();
+                $("#AddCo-SupervisorId1").hide();
+                $("#AddBatchId").hide();
+                $("#AddCampusId").hide();
+                $("#AddProgramId").hide();
+                $("#AddSemestersId").hide();
+                $("#UpdateSupervisorMarksId").hide();
+                $("#UpdateInternalMarksId").hide();
+                $("#UpdateExternalMarksId").hide();
+                $("#UpdateProposalMarksId").hide();
+                $("#UpdateSrsMarksId").hide();
+                $("#UpdateSddMarksId").hide();
+                $("#ViewDomainId").show();
+                $("#ViewAlliedFieldId").hide();
+                $("#ViewSupervisorId").hide();
+                $("#ViewCo-SupervisorId").hide();
+                $("#ViewBatchId").hide();
+                $("#ViewCampusId").hide();
+                $("#ViewProgramId").hide();
+                $("#ViewSemestersId").hide();
+            });
+            $(".ViewAlliedField").click(function () {
+                $("#AddDomainId").hide();
+                $("#AddAlliedFieldId").hide();
+                $("#AddSupervisorId").hide();
+                $("#AddCo-SupervisorId1").hide();
+                $("#AddBatchId").hide();
+                $("#AddCampusId").hide();
+                $("#AddProgramId").hide();
+                $("#AddSemestersId").hide();
+                $("#UpdateSupervisorMarksId").hide();
+                $("#UpdateInternalMarksId").hide();
+                $("#UpdateExternalMarksId").hide();
+                $("#UpdateProposalMarksId").hide();
+                $("#UpdateSrsMarksId").hide();
+                $("#UpdateSddMarksId").hide();
+                $("#ViewDomainId").hide();
+                $("#ViewAlliedFieldId").show();
+                $("#ViewSupervisorId").hide();
+                $("#ViewCo-SupervisorId").hide();
+                $("#ViewBatchId").hide();
+                $("#ViewCampusId").hide();
+                $("#ViewProgramId").hide();
+                $("#ViewSemestersId").hide();
+            });
+            $(".ViewSupervisor").click(function () {
+                $("#AddDomainId").hide();
+                $("#AddAlliedFieldId").hide();
+                $("#AddSupervisorId").hide();
+                $("#AddCo-SupervisorId1").hide();
+                $("#AddBatchId").hide();
+                $("#AddCampusId").hide();
+                $("#AddProgramId").hide();
+                $("#AddSemestersId").hide();
+                $("#UpdateSupervisorMarksId").hide();
+                $("#UpdateInternalMarksId").hide();
+                $("#UpdateExternalMarksId").hide();
+                $("#UpdateProposalMarksId").hide();
+                $("#UpdateSrsMarksId").hide();
+                $("#UpdateSddMarksId").hide();
+                $("#ViewDomainId").hide();
+                $("#ViewAlliedFieldId").hide();
+                $("#ViewSupervisorId").show();
+                $("#ViewCo-SupervisorId").hide();
+                $("#ViewBatchId").hide();
+                $("#ViewCampusId").hide();
+                $("#ViewProgramId").hide();
+                $("#ViewSemestersId").hide();
+            });
+            $(".ViewCo-Supervisor").click(function () {
+                $("#AddDomainId").hide();
+                $("#AddAlliedFieldId").hide();
+                $("#AddSupervisorId").hide();
+                $("#AddCo-SupervisorId1").hide();
+                $("#AddBatchId").hide();
+                $("#AddCampusId").hide();
+                $("#AddProgramId").hide();
+                $("#AddSemestersId").hide();
+                $("#UpdateSupervisorMarksId").hide();
+                $("#UpdateInternalMarksId").hide();
+                $("#UpdateExternalMarksId").hide();
+                $("#UpdateProposalMarksId").hide();
+                $("#UpdateSrsMarksId").hide();
+                $("#UpdateSddMarksId").hide();
+                $("#ViewDomainId").hide();
+                $("#ViewAlliedFieldId").hide();
+                $("#ViewSupervisorId").hide();
+                $("#ViewCo-SupervisorId").show();
+                $("#ViewBatchId").hide();
+                $("#ViewCampusId").hide();
+                $("#ViewProgramId").hide();
+                $("#ViewSemestersId").hide();
+            });
+            $(".ViewBatch").click(function () {
+                $("#AddDomainId").hide();
+                $("#AddAlliedFieldId").hide();
+                $("#AddSupervisorId").hide();
+                $("#AddCo-SupervisorId1").hide();
+                $("#AddBatchId").hide();
+                $("#AddCampusId").hide();
+                $("#AddProgramId").hide();
+                $("#AddSemestersId").hide();
+                $("#UpdateSupervisorMarksId").hide();
+                $("#UpdateInternalMarksId").hide();
+                $("#UpdateExternalMarksId").hide();
+                $("#UpdateProposalMarksId").hide();
+                $("#UpdateSrsMarksId").hide();
+                $("#UpdateSddMarksId").hide();
+                $("#ViewDomainId").hide();
+                $("#ViewAlliedFieldId").hide();
+                $("#ViewSupervisorId").hide();
+                $("#ViewCo-SupervisorId").hide();
+                $("#ViewBatchId").show();
+                $("#ViewCampusId").hide();
+                $("#ViewProgramId").hide();
+                $("#ViewSemestersId").hide();
+            });
+            $(".ViewCampus").click(function () {
+                $("#AddDomainId").hide();
+                $("#AddAlliedFieldId").hide();
+                $("#AddSupervisorId").hide();
+                $("#AddCo-SupervisorId1").hide();
+                $("#AddBatchId").hide();
+                $("#AddCampusId").hide();
+                $("#AddProgramId").hide();
+                $("#AddSemestersId").hide();
+                $("#UpdateSupervisorMarksId").hide();
+                $("#UpdateInternalMarksId").hide();
+                $("#UpdateExternalMarksId").hide();
+                $("#UpdateProposalMarksId").hide();
+                $("#UpdateSrsMarksId").hide();
+                $("#UpdateSddMarksId").hide();
+                $("#ViewDomainId").hide();
+                $("#ViewAlliedFieldId").hide();
+                $("#ViewSupervisorId").hide();
+                $("#ViewCo-SupervisorId").hide();
+                $("#ViewBatchId").hide();
+                $("#ViewCampusId").show();
+                $("#ViewProgramId").hide();
+                $("#ViewSemestersId").hide();
+            });
+            $(".ViewProgram").click(function () {
+                $("#AddDomainId").hide();
+                $("#AddAlliedFieldId").hide();
+                $("#AddSupervisorId").hide();
+                $("#AddCo-SupervisorId1").hide();
+                $("#AddBatchId").hide();
+                $("#AddCampusId").hide();
+                $("#AddProgramId").hide();
+                $("#AddSemestersId").hide();
+                $("#UpdateSupervisorMarksId").hide();
+                $("#UpdateInternalMarksId").hide();
+                $("#UpdateExternalMarksId").hide();
+                $("#UpdateProposalMarksId").hide();
+                $("#UpdateSrsMarksId").hide();
+                $("#UpdateSddMarksId").hide();
+                $("#ViewDomainId").hide();
+                $("#ViewAlliedFieldId").hide();
+                $("#ViewSupervisorId").hide();
+                $("#ViewCo-SupervisorId").hide();
+                $("#ViewBatchId").hide();
+                $("#ViewCampusId").hide();
+                $("#ViewProgramId").show();
+                $("#ViewSemestersId").hide();
+            });
+            $(".ViewSemesters").click(function () {
+                $("#AddDomainId").hide();
+                $("#AddAlliedFieldId").hide();
+                $("#AddSupervisorId").hide();
+                $("#AddCo-SupervisorId1").hide();
+                $("#AddBatchId").hide();
+                $("#AddCampusId").hide();
+                $("#AddProgramId").hide();
+                $("#AddSemestersId").hide();
+                $("#UpdateSupervisorMarksId").hide();
+                $("#UpdateInternalMarksId").hide();
+                $("#UpdateExternalMarksId").hide();
+                $("#UpdateProposalMarksId").hide();
+                $("#UpdateSrsMarksId").hide();
+                $("#UpdateSddMarksId").hide();
+                $("#ViewDomainId").hide();
+                $("#ViewAlliedFieldId").hide();
+                $("#ViewSupervisorId").hide();
+                $("#ViewCo-SupervisorId").hide();
+                $("#ViewBatchId").hide();
+                $("#ViewCampusId").hide();
+                $("#ViewProgramId").hide();
+                $("#ViewSemestersId").show();
+            });
+        </script>
+    </div>
+</body>
+</html>

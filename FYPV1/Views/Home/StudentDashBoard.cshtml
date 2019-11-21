@@ -1,0 +1,530 @@
+﻿@model FYPV1.ViewModels.StudentDashBoardVM
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>
+        FYPOnline Student Portal
+    </title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
+    </script>
+    <script src="~/JavaScript/Student.js"></script>
+
+    <link href="~/CSS/Student.css" rel="stylesheet" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+    </script>
+    </link>
+    </link>
+    </meta>
+    </meta>
+    <script src="~/JavaScript/TeacherIndex.js"></script>
+    <link href="~/CSS/TeacherIndex.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" rel="stylesheet">
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript">
+    </script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    </link>
+</head>
+<body>
+    <div class="container-fluid backgroungcolor">
+        <div class="row justify-content-between">
+            <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-4 mt-3">
+                <img alt="Responsive image" class="img-fluid" src="~/Images/cuis_bg5.png">
+                </img>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 mt-3">
+                <div class="d-inline-block card card-body text-center float-xl-right float-lg-right float-md-left ml-1" style="width: 5rem;height: 6rem;display: inline;">
+                    <div class="text-center">
+                        <a href="https://www.w3schools.com">
+                            <img height="50" src="Images/logout.png" width="50" />
+                        </a>
+                    </div>
+                    <a href="https://www.w3schools.com" style="text-decoration: none;color: black;font-size: 9px;font-weight:bold;">
+                        Logout
+                    </a>
+                </div>
+                <div class="d-inline-block card card-body text-center float-xl-right float-lg-right float-md-left ml-1" style="width: 5rem;height: 6rem;display: inline;">
+                    <div class="text-center">
+                        <a class="FinalReportLink" href="#">
+                            <img height="50" width="50" src="~/Images/cuis_bg5.png" />
+
+                        </a>
+                    </div>
+                    <a class="FinalReportLink" href="#" style="text-decoration: none;color: black;font-size: 9px;font-weight:bold;">
+                        Report
+                    </a>
+                </div>
+                <div class="d-inline-block card card-body text-center float-xl-right float-lg-right float-md-left ml-1" style="width: 5rem;height: 6rem;display: inline;">
+                    <div class="text-center">
+                        <a class="CodeLink" href="#">
+                            <img height="50" src="Images/code.png" width="50" />
+                        </a>
+                    </div>
+                    <a class="CodeLink" href="#" style="text-decoration: none;color: black;font-size: 9px;font-weight:bold;">
+                        Code
+                    </a>
+                </div>
+                <div class="d-inline-block card card-body text-center float-xl-right float-lg-right float-md-left ml-1" style="width: 5rem;height: 6rem;display: inline;">
+                    <div class="text-center">
+                        <a class="Srelink" href="#">
+                            <img height="50" src="Images/proposal.png" width="50" />
+                        </a>
+                    </div>
+                    <a class="Srelink" href="#" style="text-decoration: none;color: black;font-size: 9px;font-weight:bold;">
+                        SRE
+                    </a>
+                </div>
+                <div class="d-inline-block card card-body text-center float-xl-right float-lg-right float-md-left ml-1" style="width: 5rem;height: 6rem;display: inline;">
+                    <div class="text-center">
+                        <a class="Srslink" href="#">
+                            <img height="50" src="Images/proposal.png" width="50" />
+                        </a>
+                    </div>
+                    <a class="Srslink" href="#" style="text-decoration: none;color: black;font-size: 9px;font-weight:bold;">
+                        SRS
+                    </a>
+                </div>
+                <div class="d-inline-block card card-body text-center float-xl-right float-lg-right float-md-left ml-1" style="width: 5rem;height: 6rem;display: inline;">
+                    <div class="text-center">
+                        <a class="proposallink" href="#">
+                            <img height="50" src="Images/proposal.png" width="50" />
+                        </a>
+                    </div>
+                    <a class="proposallink" href="#" style="text-decoration: none;color: black;font-size: 9px;font-weight:bold;">
+                        Proposal
+                    </a>
+                </div>
+                <div class="d-inline-block card card-body text-center float-xl-right float-lg-right float-md-center ml-1" style="width: 5rem;height: 6rem;display: inline;">
+                    <div class="text-center">
+                        <a class="proposallink" href="#">
+                            <img height="50" src="Images/home.png" width="50" />
+                        </a>
+                    </div>
+                    <a class="proposallink" href="#" style="text-decoration: none;color: black;font-size: 9px;font-weight:bold;">
+                        Home
+                    </a>
+                </div>
+            </div>
+        </div>
+        <hr class="style1" />
+        <!--Proposal-->
+        <div class="container rounded formwidthfontcolor" id="Proposal">
+            <form>
+                <div class="text-center">
+                    <h1>
+                        Proposal
+                    </h1>
+                </div>
+                <div class="form-row">
+                    <label>
+                        <strong>
+                            Team Members:
+                        </strong>
+                    </label>
+                </div>
+                <!--First member-->
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="inputCity">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            RegNo
+                        </label>
+                        <input class="form-control" id="inputCity" placeholder="*RegNo" type="text">
+                        </input>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputName">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Name
+                        </label>
+                        <input class="form-control" id="inputName" placeholder="*Name" type="text">
+                        </input>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputSemester">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Semester
+                        </label>
+                        <select class="form-control" id="inputSemester">
+                            <option selected="">
+                                Choose...
+                            </option>
+                            <option>
+                                ...
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <!--Second member-->
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="inputCity">
+                            RegNo
+                        </label>
+                        <input class="form-control" id="inputCity" placeholder="*RegNo" type="text">
+                        </input>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputName">
+                            Name
+                        </label>
+                        <input class="form-control" id="inputName" placeholder="*Name" type="text">
+                        </input>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputSemester">
+                            Semester
+                        </label>
+                        <select class="form-control" id="inputSemester">
+                            <option selected="">
+                                Choose...
+                            </option>
+                            <option>
+                                ...
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <!--Third member-->
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="inputCity">
+                            RegNo
+                        </label>
+                        <input class="form-control" id="inputCity" placeholder="*RegNo" type="text">
+                        </input>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputName">
+                            Name
+                        </label>
+                        <input class="form-control" id="inputName" placeholder="*Name" type="text">
+                        </input>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputSemester">
+                            Semester
+                        </label>
+                        <select class="form-control" id="inputSemester">
+                            <option selected="">
+                                Choose...
+                            </option>
+                            <option>
+                                ...
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <!--Forth member-->
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="inputCity">
+                            RegNo
+                        </label>
+                        <input class="form-control" id="inputCity" placeholder="*RegNo" type="text">
+                        </input>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputName">
+                            Name
+                        </label>
+                        <input class="form-control" id="inputName" placeholder="*Name" type="text">
+                        </input>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputSemester">
+                            Semester
+                        </label>
+                        <select class="form-control" id="inputSemester">
+                            <option selected="">
+                                Choose...
+                            </option>
+                            <option>
+                                ...
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <!--Project Title-->
+                <div class="form-group">
+                    <label for="inputTitle">
+                        <span class="text-danger">
+                            *
+                        </span>
+                        Title
+                    </label>
+                    <input class="form-control" id="inputTitle" placeholder="*Project Title" type="text">
+                    </input>
+                </div>
+                <!--SuperViser and CoSuperviser -->
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputSuperviser">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Superviser
+                        </label>
+                        <select class="form-control" id="inputSuperviser">
+                            <option selected="">
+                                Choose...
+                            </option>
+                            <option>
+                                ...
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputCoSuperviser">
+                            Co Superviser
+                        </label>
+                        <select class="form-control" id="inputCoSuperviser">
+                            <option selected="">
+                                Choose...
+                            </option>
+                            <option>
+                                ...
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <!--Summary-->
+                <div class="form-group">
+                    <label for="inputSummery/Abstract ">
+                        <span class="text-danger">
+                            *
+                        </span>
+                        Summery / Abstract (100 To 300 Words)
+                    </label>
+                    <textarea class="form-control" id="Summery/Abstract" name="text" rows="5">
+                        </textarea>
+                </div>
+                <!--Objective-->
+                <div class="form-group">
+                    <label for="inputObjective">
+                        <span class="text-danger">
+                            *
+                        </span>
+                        Objective (1 To 50 Words)
+                    </label>
+                    <textarea class="form-control" id="Objective" name="text" rows="4">
+                        </textarea>
+                </div>
+                <!--Scope-->
+                <div class="form-group">
+                    <label for="inputObjective">
+                        <span class="text-danger">
+                            *
+                        </span>
+                        Scope (100 Words)
+                    </label>
+                    <textarea class="form-control" id="Objective" name="text" rows="4">
+                        </textarea>
+                </div>
+                <!--Tools and Technologies-->
+                <div class="form-group">
+                    <label for="inputObjective">
+                        <span class="text-danger">
+                            *
+                        </span>
+                        Tools and Technologies
+                    </label>
+                    <textarea class="form-control" id="Objective" name="text" rows="4">
+                        </textarea>
+                </div>
+                <!--Upload File-->
+                <div class="form-group">
+                    <label for="exampleFormControlFile1">
+                        <span class="text-danger">
+                            *
+                        </span>
+                        File Type(.zip/.rar)
+                    </label>
+                    <input class="form-control-file" id="exampleFormControlFile1" type="file">
+                    </input>
+                </div>
+                <!--Buttons Save and Documents Latter-->
+                <div class="form-row">
+                    <div class="form-group col">
+                        <button class="btn btn-primary" type="Documents">
+                            Documents
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--Srs Portion-->
+        <div class="container formwidthfontcolor" id="Srs">
+            <form>
+                <div class="text-center">
+                    <h1>
+                        SRS
+                    </h1>
+                </div>
+                <!--Upload File-->
+                <div class="form-group">
+                    <label for="exampleFormControlFile1">
+                        File Type(.zip/.rar)
+                    </label>
+                    <input class="form-control-file" id="exampleFormControlFile1" type="file">
+                    </input>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <button class="btn btn-primary" type="Documents">
+                            Documents
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--Sre Portion-->
+        <div class="container formwidthfontcolor" id="Sre">
+            <form>
+                <div class="text-center">
+                    <h1>
+                        SRE
+                    </h1>
+                </div>
+                <!--Upload File-->
+                <div class="form-group">
+                    <label for="exampleFormControlFile1">
+                        File Type(.zip/.rar)
+                    </label>
+                    <input class="form-control-file" id="exampleFormControlFile1" type="file">
+                    </input>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <button class="btn btn-primary" type="Documents">
+                            Documents
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--Final Report-->
+        <div class="container formwidthfontcolor" id="FinalReport">
+            <form>
+                <div class="text-center">
+                    <h1>
+                        Final Report
+                    </h1>
+                </div>
+                <!--Upload File-->
+                <div class="form-group">
+                    <label for="exampleFormControlFile1">
+                        File Type(.zip/.rar)
+                    </label>
+                    <input class="form-control-file" id="exampleFormControlFile1" type="file">
+                    </input>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <button class="btn btn-primary" type="Submit">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--Code-->
+        <div class="container formwidthfontcolor" id="Code">
+            <form>
+                <div class="text-center">
+                    <h1>
+                        Code
+                    </h1>
+                </div>
+                <!--Upload File-->
+                <div class="form-group">
+                    <label for="exampleFormControlFile1">
+                        File Type(.zip/.rar)
+                    </label>
+                    <input class="form-control-file" id="exampleFormControlFile1" type="file">
+                    </input>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <button class="btn btn-primary" type="Submit">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--Footer-->
+        <div class="row mt-3">
+            <div class="col footerbackgroundcolor">
+                <div class="text-center mt-3 footertextcolor">
+                    <a href="#">
+                        FYPOnline,
+                    </a>
+                    Principal Seat © 2018-COMSATS ®
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#Proposal").show();
+        $("#Srs").hide();
+        $("#Sre").hide();
+        $("#Code").hide();
+        $("#FinalReport").hide();
+    });
+
+    $(".proposallink").click(function () {
+        $("#Proposal").show();
+        $("#Srs").hide();
+        $("#Sre").hide();
+        $("#Code").hide();
+        $("#FinalReport").hide();
+    });
+    $(".Srslink").click(function () {
+        $("#Proposal").hide();
+        $("#Srs").show();
+        $("#Sre").hide();
+        $("#Code").hide();
+        $("#FinalReport").hide();
+    });
+    $(".Srelink").click(function () {
+        $("#Proposal").hide();
+        $("#Srs").hide();
+        $("#Sre").show();
+        $("#Code").hide();
+        $("#FinalReport").hide();
+    });
+    $(".CodeLink").click(function () {
+        $("#Proposal").hide();
+        $("#Srs").hide();
+        $("#Sre").hide();
+        $("#Code").show();
+        $("#FinalReport").hide();
+    });
+    $(".FinalReportLink").click(function () {
+        $("#Proposal").hide();
+        $("#Srs").hide();
+        $("#Sre").hide();
+        $("#Code").hide();
+        $("#FinalReport").show();
+    });
+</script>
+</html>

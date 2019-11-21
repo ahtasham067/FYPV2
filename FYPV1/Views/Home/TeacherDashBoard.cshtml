@@ -1,0 +1,2422 @@
+﻿@model FYPV1.ViewModels.TeacherDashBoardVM
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>
+        FYPOnline Student Portal
+    </title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
+    </script>
+    <script src="~/JavaScript/Student.js"></script>
+
+    <link href="~/CSS/Student.css" rel="stylesheet" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+    </script>
+    </link>
+    </link>
+    </meta>
+    </meta>
+    <script src="~/JavaScript/TeacherIndex.js"></script>
+    <link href="~/CSS/TeacherIndex.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" rel="stylesheet">
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript">
+    </script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    </link>
+</head>
+<body>
+    <div class="container-fluid backgroungcolor">
+        <div class="row justify-content-between">
+            <div class="col-10 col-sm-8 col-md-6 col-lg-3 col-xl-4 mt-3">
+                <img alt="Responsive image" class="img-fluid" src="~/Images/cuis_bg5.png">
+                </img>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-8 mt-3">
+                <div class="d-inline-block card card-body text-center float-xl-right float-lg-right float-md-left ml-1" style="width: 5rem;height: 6rem;display: inline;">
+                    <div class="text-center">
+                        <a href="https://www.w3schools.com">
+                            <img height="50" src="Images/logout.png" width="50" />
+                        </a>
+                    </div>
+                    <a href="https://www.w3schools.com" style="text-decoration: none;color: black;font-size: 9px;font-weight:bold;">
+                        Logout
+                    </a>
+                </div>
+                <div class="d-inline-block card card-body text-center float-xl-right float-lg-right float-md-left ml-1" style="width: 5rem;height: 6rem;display: inline;">
+                    <div class="text-center">
+                        <a class="AddIdealink" href="#">
+                            <img height="50" src="Images/logout.png" width="50" />
+                        </a>
+                    </div>
+                    <a class="AddIdealink" href="#" style="text-decoration: none;color: black;font-size: 9px;font-weight:bold;">
+                        AddIdea
+                    </a>
+                </div>
+                <div class="d-inline-block card card-body text-center float-xl-right float-lg-right float-md-left ml-1" style="width: 5rem;height: 6rem;display: inline;">
+                    <div class="text-center">
+                        <a class="SupervisorEvaluationlink" href="#">
+                            <img height="50" src="Images/proposal.png" width="50" />
+                        </a>
+                    </div>
+                    <a class="SupervisorEvaluationlink" href="#" style="text-decoration: none;color: black;font-size: 9px;font-weight:bold;">
+                        Supervisor
+                    </a>
+                </div>
+                <div class="d-inline-block card card-body text-center float-xl-right float-lg-right float-md-left ml-1" style="width: 5rem;height: 6rem;display: inline;">
+                    <div class="text-center">
+                        <a class="InternalEvaluationlink" href="#">
+                            <img height="50" src="Images/code.png" width="50" />
+                        </a>
+                    </div>
+                    <a class="InternalEvaluationlink" href="#" style="text-decoration: none;color: black;font-size: 9px;font-weight:bold;">
+                        Internals
+                    </a>
+                </div>
+                <div class="d-inline-block card card-body text-center float-xl-right float-lg-right float-md-left ml-1" style="width: 5rem;height: 6rem;display: inline;">
+                    <div class="text-center">
+                        <a class="SrsEvaluationlink" href="#">
+                            <img height="50" src="Images/proposal.png" width="50" />
+                        </a>
+                    </div>
+                    <a class="SrsEvaluationlink" href="#" style="text-decoration: none;color: black;font-size: 9px;font-weight:bold;">
+                        SRS Internal Evaluation
+                    </a>
+                </div>
+                <div class="d-inline-block card card-body text-center float-xl-right float-lg-right float-md-left ml-1" style="width: 5rem;height: 6rem;display: inline;">
+                    <div class="text-center">
+                        <a class="SddEvaluationlink" href="#">
+                            <img height="50" src="Images/proposal.png" width="50" />
+                        </a>
+                    </div>
+                    <a class="SddEvaluationlink" href="#" style="text-decoration: none;color: black;font-size: 9px;font-weight:bold;">
+                        SDD Internal Evaluation
+                    </a>
+                </div>
+                <div class="d-inline-block card card-body text-center float-xl-right float-lg-right float-md-left ml-1" style="width: 5rem;height: 6rem;display: inline;">
+                    <div class="text-center">
+                        <a class="ProposalInternalEvaluationlink" href="#">
+                            <img height="50" src="Images/proposal.png" width="50" />
+                        </a>
+                    </div>
+                    <a class="ProposalInternalEvaluationlink" href="#" style="text-decoration: none;color: black;font-size: 9px;font-weight:bold;">
+                        Proposal Internal Evaluation
+                    </a>
+                </div>
+                <div class="d-inline-block card card-body text-center float-xl-right float-lg-right float-md-center ml-1" style="width: 5rem;height: 6rem;display: inline;">
+                    <div class="text-center">
+                        <a class="Meetinglink" href="#">
+                            <img height="50" src="Images/home.png" width="50" />
+                        </a>
+                    </div>
+                    <a class="Meetinglink" href="#" style="text-decoration: none;color: black;font-size: 9px;font-weight:bold;">
+                        Meeting
+                    </a>
+                </div>
+            </div>
+        </div>
+        <hr class="style1" />
+        <!--Proposal-->
+        <div class="container rounded formwidthfontcolor" id="MeetingId">
+            <form>
+                <div class="text-center">
+                    <h1>
+                        FYP Meeting Form
+                    </h1>
+                </div>
+                <!--Project ID and Title-->
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputSuperviser">
+                            ProjectID
+                        </label>
+                        <select class="form-control" id="inputSuperviser">
+                            <option selected="">
+                                Choose...
+                            </option>
+                            <option>
+                                ...
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputTitle">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Title
+                        </label>
+                        <input class="form-control" id="inputTitle" placeholder="*Project Title" type="text">
+                        </input>
+                    </div>
+                </div>
+                <!--SuperViser and CoSuperviser -->
+                <div class="form-row">
+                    <div class="row mb-3 col-md-6">
+                        <div class="col-sm ">
+                            <span>
+                                Start Date:
+                            </span>
+                            <input id="startDate" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputCoSuperviser">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Time
+                        </label>
+                        <select class="form-control" id="inputCoSuperviser">
+                            <option selected="">
+                                Choose...
+                            </option>
+                            <option>
+                                ...
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <!--Project Evaluation-->
+                <div class="form-row">
+                    <label>
+                        <strong>
+                            Team Members:
+                        </strong>
+                    </label>
+                </div>
+                <!--First Member-->
+                <div class="form-row">
+                    <label>
+                        Member 1:
+                    </label>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="inputCity">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            RegNo
+                        </label>
+                        <input class="form-control" id="inputCity" placeholder="*RegNo" type="text">
+                        </input>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputName">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Name
+                        </label>
+                        <input class="form-control" id="inputName" placeholder="*Name" type="text">
+                        </input>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputSemester">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Semester
+                        </label>
+                        <select class="form-control" id="inputSemester">
+                            <option selected="">
+                                Choose...
+                            </option>
+                            <option>
+                                ...
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-check col-md-6">
+                        <input checked="" class="form-check-input ml-1" id="exampleRadios1" name="exampleRadios" type="radio" value="option1">
+                        <label class="form-check-label ml-4" for="exampleRadios1">
+                            Present
+                        </label>
+                        </input>
+                    </div>
+                    <div class="form-check col-md-6">
+                        <input class="form-check-input ml-1" id="exampleRadios2" name="exampleRadios" type="radio" value="option2">
+                        <label class="form-check-label ml-4" for="exampleRadios2">
+                            Absent
+                        </label>
+                        </input>
+                    </div>
+                </div>
+                <!--Comments-->
+                <div class="form-group">
+                    <label for="inputSummery/Abstract ">
+                        <span class="text-danger">
+                            *
+                        </span>
+                        Comments (if any)
+                    </label>
+                    <textarea class="form-control" id="Summery/Abstract" name="text" rows="5">
+                        </textarea>
+                </div>
+                <!--Second members-->
+                <div class="form-row">
+                    <label>
+                        Member 2:
+                    </label>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="inputCity">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            RegNo
+                        </label>
+                        <input class="form-control" id="inputCity" placeholder="*RegNo" type="text">
+                        </input>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputName">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Name
+                        </label>
+                        <input class="form-control" id="inputName" placeholder="*Name" type="text">
+                        </input>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputSemester">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Semester
+                        </label>
+                        <select class="form-control" id="inputSemester">
+                            <option selected="">
+                                Choose...
+                            </option>
+                            <option>
+                                ...
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-check col-md-6">
+                        <input checked="" class="form-check-input ml-1" id="exampleRadios1" name="exampleRadios" type="radio" value="option1">
+                        <label class="form-check-label ml-4" for="exampleRadios1">
+                            Present
+                        </label>
+                        </input>
+                    </div>
+                    <div class="form-check col-md-6">
+                        <input class="form-check-input ml-1" id="exampleRadios2" name="exampleRadios" type="radio" value="option2">
+                        <label class="form-check-label ml-4" for="exampleRadios2">
+                            Absent
+                        </label>
+                        </input>
+                    </div>
+                </div>
+                <!--Comments-->
+                <div class="form-group">
+                    <label for="inputSummery/Abstract ">
+                        <span class="text-danger">
+                            *
+                        </span>
+                        Comments (if any)
+                    </label>
+                    <textarea class="form-control" id="Summery/Abstract" name="text" rows="5">
+                        </textarea>
+                </div>
+                <!--Third Member-->
+                <div class="form-row">
+                    <label>
+                        Member 3:
+                    </label>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="inputCity">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            RegNo
+                        </label>
+                        <input class="form-control" id="inputCity" placeholder="*RegNo" type="text">
+                        </input>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputName">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Name
+                        </label>
+                        <input class="form-control" id="inputName" placeholder="*Name" type="text">
+                        </input>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputSemester">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Semester
+                        </label>
+                        <select class="form-control" id="inputSemester">
+                            <option selected="">
+                                Choose...
+                            </option>
+                            <option>
+                                ...
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-check col-md-6">
+                        <input checked="" class="form-check-input ml-1" id="exampleRadios1" name="exampleRadios" type="radio" value="option1">
+                        <label class="form-check-label ml-4" for="exampleRadios1">
+                            Present
+                        </label>
+                        </input>
+                    </div>
+                    <div class="form-check col-md-6">
+                        <input class="form-check-input ml-1" id="exampleRadios2" name="exampleRadios" type="radio" value="option2">
+                        <label class="form-check-label ml-4" for="exampleRadios2">
+                            Absent
+                        </label>
+                        </input>
+                    </div>
+                </div>
+                <!--Comments-->
+                <div class="form-group">
+                    <label for="inputSummery/Abstract ">
+                        <span class="text-danger">
+                            *
+                        </span>
+                        Comments (if any)
+                    </label>
+                    <textarea class="form-control" id="Summery/Abstract" name="text" rows="5">
+                        </textarea>
+                </div>
+                <!--Forth Member-->
+                <div class="form-row">
+                    <label>
+                        Member 4:
+                    </label>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="inputCity">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            RegNo
+                        </label>
+                        <input class="form-control" id="inputCity" placeholder="*RegNo" type="text">
+                        </input>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputName">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Name
+                        </label>
+                        <input class="form-control" id="inputName" placeholder="*Name" type="text">
+                        </input>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputSemester">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Semester
+                        </label>
+                        <select class="form-control" id="inputSemester">
+                            <option selected="">
+                                Choose...
+                            </option>
+                            <option>
+                                ...
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-check col-md-6">
+                        <input checked="" class="form-check-input ml-1" id="exampleRadios1" name="exampleRadios" type="radio" value="option1">
+                        <label class="form-check-label ml-4" for="exampleRadios1">
+                            Present
+                        </label>
+                        </input>
+                    </div>
+                    <div class="form-check col-md-6">
+                        <input class="form-check-input ml-1" id="exampleRadios2" name="exampleRadios" type="radio" value="option2">
+                        <label class="form-check-label ml-4" for="exampleRadios2">
+                            Absent
+                        </label>
+                        </input>
+                    </div>
+                </div>
+                <!--Comments-->
+                <div class="form-group">
+                    <label for="inputSummery/Abstract ">
+                        <span class="text-danger">
+                            *
+                        </span>
+                        Comments (if any)
+                    </label>
+                    <textarea class="form-control" id="Summery/Abstract" name="text" rows="5">
+                        </textarea>
+                </div>
+                <!--Comments-->
+                <div class="form-group">
+                    <label for="inputSummery/Abstract ">
+                        <span class="text-danger">
+                            *
+                        </span>
+                        Over All Comments of the Supervisor (if any)
+                    </label>
+                    <textarea class="form-control" id="Summery/Abstract" name="text" rows="5">
+                        </textarea>
+                </div>
+                <!--Buttons Save and Documents Latter-->
+                <div class="form-row">
+                    <div class="form-group text-right">
+                        <button class="btn btn-primary" type="submit">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--ProposalInternalEvaluation-->
+        <div class="container rounded formwidthfontcolor" id="ProposalInternalEvaluationId">
+            <form>
+                <div class="text-center">
+                    <h1>
+                        Proposal Evaluation Form
+                        <br>
+                        (Internals)
+                        </br>
+                    </h1>
+                </div>
+                <!--Project ID and Title-->
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputSuperviser">
+                            ProjectID
+                        </label>
+                        <select class="form-control" id="inputSuperviser">
+                            <option selected="">
+                                Choose...
+                            </option>
+                            <option>
+                                ...
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputTitle">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Title
+                        </label>
+                        <input class="form-control" id="inputTitle" placeholder="*Project Title" type="text">
+                        </input>
+                    </div>
+                </div>
+                <!--SuperViser and CoSuperviser -->
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputSuperviser">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Superviser
+                        </label>
+                        <select class="form-control" id="inputSuperviser">
+                            <option selected="">
+                                Choose...
+                            </option>
+                            <option>
+                                ...
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputCoSuperviser">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Co Superviser
+                        </label>
+                        <select class="form-control" id="inputCoSuperviser">
+                            <option selected="">
+                                Choose...
+                            </option>
+                            <option>
+                                ...
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <!--Project Evaluation-->
+                <div>
+                    <span>
+                        <h4 class="d-inline">
+                            Part A:
+                        </h4>
+                    </span>
+                    <span>
+                        <h4 class="d-inline ml-2">
+                            Project Evaluation
+                        </h4>
+                    </span>
+                    <div class="mt-2">
+                        <h6>
+                            Scope of the project:(Please tick one option)
+                        </h6>
+                    </div>
+                </div>
+                <!--Radio Button-->
+                <div class="row">
+                    <div class="form-check col-md-6">
+                        <input checked="" class="form-check-input ml-1" id="exampleRadios1" name="exampleRadios" type="radio" value="option1">
+                        <label class="form-check-label ml-4" for="exampleRadios1">
+                            Very Poor (far less than a standard FYP)
+                        </label>
+                        </input>
+                    </div>
+                    <div class="form-check col-md-6">
+                        <input class="form-check-input ml-1" id="exampleRadios2" name="exampleRadios" type="radio" value="option2">
+                        <label class="form-check-label ml-4" for="exampleRadios2">
+                            Poor (less than a standard FYP)
+                        </label>
+                        </input>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="form-check col-md-6">
+                        <input checked="" class="form-check-input ml-1" id="exampleRadios1" name="exampleRadios" type="radio" value="option1">
+                        <label class="form-check-label ml-4" for="exampleRadios1">
+                            Good (equal to a standard FYP)
+                        </label>
+                        </input>
+                    </div>
+                    <div class="form-check col-md-6">
+                        <input class="form-check-input ml-1" id="exampleRadios2" name="exampleRadios" type="radio" value="option2">
+                        <label class="form-check-label ml-4" for="exampleRadios2">
+                            Very Good (more than a standard FYP)
+                        </label>
+                        </input>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="form-check col">
+                        <input class="form-check-input ml-1" id="exampleRadios2" name="exampleRadios" type="radio" value="option2">
+                        <label class="form-check-label ml-4" for="exampleRadios2">
+                            Excellent (much more than a standard FYP)
+                        </label>
+                        </input>
+                    </div>
+                </div>
+                <!--Individual Evaluation-->
+                <div>
+                    <span>
+                        <h4 class="d-inline">
+                            Part B:
+                        </h4>
+                    </span>
+                    <span>
+                        <h4 class="d-inline ml-2">
+                            Individual Evaluation
+                        </h4>
+                    </span>
+                </div>
+                <table class="table-responsive table-bordered mt-3">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">
+                                Sr No
+                            </th>
+                            <th scope="col">
+                                Reg.No
+                            </th>
+                            <th scope="col">
+                                Student Name
+                            </th>
+                            <th scope="col">
+                                Idea(Max Marks=5)
+                            </th>
+                            <th scope="col">
+                                Scope(Max Marks=5)
+                            </th>
+                            <th scope="col">
+                                Domain Knowledge(Max Marks=5)
+                            </th>
+                            <th scope="col">
+                                Documentation(Completion+Quality)(Max Marks=5)
+                            </th>
+                            <th scope="col">
+                                Total Marks(20)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                1
+                            </th>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                2
+                            </th>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                3
+                            </th>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--Comments-->
+                <div class="form-group">
+                    <label for="inputSummery/Abstract ">
+                        <span class="text-danger">
+                            *
+                        </span>
+                        Comments (if any)
+                    </label>
+                    <textarea class="form-control" id="Summery/Abstract" name="text" rows="5">
+                        </textarea>
+                </div>
+                <div>
+                    date auto Select
+                </div>
+                <!--Buttons Save and Documents Latter-->
+                <div class="form-row">
+                    <div class="form-group text-right">
+                        <button class="btn btn-primary" type="submit">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--SDD Evaluation Portion-->
+        <div class="container rounded formwidthfontcolor" id="SddEvaluationId">
+            <form>
+                <div class="text-center">
+                    <h1>
+                        SDD Evaluation Form
+                        <br>
+                        (Internals)
+                        </br>
+                    </h1>
+                </div>
+                <!--Project ID and Title-->
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputSuperviser">
+                            ProjectID
+                        </label>
+                        <select class="form-control" id="inputSuperviser">
+                            <option selected="">
+                                Choose...
+                            </option>
+                            <option>
+                                ...
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputTitle">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Title
+                        </label>
+                        <input class="form-control" id="inputTitle" placeholder="*Project Title" type="text">
+                        </input>
+                    </div>
+                </div>
+                <!--SuperViser and CoSuperviser -->
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputSuperviser">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Superviser
+                        </label>
+                        <select class="form-control" id="inputSuperviser">
+                            <option selected="">
+                                Choose...
+                            </option>
+                            <option>
+                                ...
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputCoSuperviser">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Co Superviser
+                        </label>
+                        <select class="form-control" id="inputCoSuperviser">
+                            <option selected="">
+                                Choose...
+                            </option>
+                            <option>
+                                ...
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <!--Project Evaluation-->
+                <div>
+                    <span>
+                        <h4 class="d-inline">
+                            Part A:
+                        </h4>
+                    </span>
+                    <span>
+                        <h4 class="d-inline ml-2">
+                            Project Evaluation
+                        </h4>
+                    </span>
+                    <div class="mt-2">
+                        <h6>
+                            Scope of the project:(Please tick one option)
+                        </h6>
+                    </div>
+                </div>
+                <!--Radio Button-->
+                <div class="row">
+                    <div class="form-check col-md-6">
+                        <input checked="" class="form-check-input ml-1" id="exampleRadios1" name="exampleRadios" type="radio" value="option1">
+                        <label class="form-check-label ml-4" for="exampleRadios1">
+                            Very Poor (far less than a standard FYP)
+                        </label>
+                        </input>
+                    </div>
+                    <div class="form-check col-md-6">
+                        <input class="form-check-input ml-1" id="exampleRadios2" name="exampleRadios" type="radio" value="option2">
+                        <label class="form-check-label ml-4" for="exampleRadios2">
+                            Poor (less than a standard FYP)
+                        </label>
+                        </input>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="form-check col-md-6">
+                        <input checked="" class="form-check-input ml-1" id="exampleRadios1" name="exampleRadios" type="radio" value="option1">
+                        <label class="form-check-label ml-4" for="exampleRadios1">
+                            Good (equal to a standard FYP)
+                        </label>
+                        </input>
+                    </div>
+                    <div class="form-check col-md-6">
+                        <input class="form-check-input ml-1" id="exampleRadios2" name="exampleRadios" type="radio" value="option2">
+                        <label class="form-check-label ml-4" for="exampleRadios2">
+                            Very Good (more than a standard FYP)
+                        </label>
+                        </input>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="form-check col">
+                        <input class="form-check-input ml-1" id="exampleRadios2" name="exampleRadios" type="radio" value="option2">
+                        <label class="form-check-label ml-4" for="exampleRadios2">
+                            Excellent (much more than a standard FYP)
+                        </label>
+                        </input>
+                    </div>
+                </div>
+                <!--Individual Evaluation-->
+                <div>
+                    <span>
+                        <h4 class="d-inline">
+                            Part B:
+                        </h4>
+                    </span>
+                    <span>
+                        <h4 class="d-inline ml-2">
+                            Individual Evaluation
+                        </h4>
+                    </span>
+                </div>
+                <table class="table-responsive table-bordered mt-3">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">
+                                Sr No
+                            </th>
+                            <th scope="col">
+                                Reg.No
+                            </th>
+                            <th scope="col">
+                                Student Name
+                            </th>
+                            <th scope="col">
+                                Sequence Diagram(Max Marks=10)
+                            </th>
+                            <th scope="col">
+                                Activity Diagram(Max Marks=10)
+                            </th>
+                            <th scope="col">
+                                Class Diagram(Max Marks=20)
+                            </th>
+                            <th scope="col">
+                                Data Model(Max Marks=5)
+                            </th>
+                            <th scope="col">
+                                Other Diagrams(Max Marks=5)
+                            </th>
+                            <th scope="col">
+                                Total Marks(50)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                1
+                            </th>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                2
+                            </th>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                3
+                            </th>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                               mdo
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--Comments-->
+                <div class="form-group">
+                    <label for="inputSummery/Abstract ">
+                        <span class="text-danger">
+                            *
+                        </span>
+                        Comments (if any)
+                    </label>
+                    <textarea class="form-control" id="Summery/Abstract" name="text" rows="5">
+                        </textarea>
+                </div>
+                <div>
+                    date auto Select
+                </div>
+                <!--Buttons Save and Documents Latter-->
+                <div class="form-row">
+                    <div class="form-group text-right">
+                        <button class="btn btn-primary" type="submit">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--SRS Evaluation-->
+        <div class="container rounded formwidthfontcolor" id="SrsEvaluationId">
+            <form>
+                <div class="text-center">
+                    <h1>
+                        SRS Evaluation Form
+                        <br>
+                        (Internals)
+                        </br>
+                    </h1>
+                </div>
+                <!--Project ID and Title-->
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputSuperviser">
+                            ProjectID
+                        </label>
+                        <select class="form-control" id="inputSuperviser">
+                            <option selected="">
+                                Choose...
+                            </option>
+                            <option>
+                                ...
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputTitle">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Title
+                        </label>
+                        <input class="form-control" id="inputTitle" placeholder="*Project Title" type="text">
+                        </input>
+                    </div>
+                </div>
+                <!--SuperViser and CoSuperviser -->
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputSuperviser">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Superviser
+                        </label>
+                        <select class="form-control" id="inputSuperviser">
+                            <option selected="">
+                                Choose...
+                            </option>
+                            <option>
+                                ...
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputCoSuperviser">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Co Superviser
+                        </label>
+                        <select class="form-control" id="inputCoSuperviser">
+                            <option selected="">
+                                Choose...
+                            </option>
+                            <option>
+                                ...
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <!--Project Evaluation-->
+                <div>
+                    <span>
+                        <h4 class="d-inline">
+                            Part A:
+                        </h4>
+                    </span>
+                    <span>
+                        <h4 class="d-inline ml-2">
+                            Project Evaluation
+                        </h4>
+                    </span>
+                    <div class="mt-2">
+                        <h6>
+                            Scope of the project:(Please tick one option)
+                        </h6>
+                    </div>
+                </div>
+                <!--Radio Button-->
+                <div class="row">
+                    <div class="form-check col-md-6">
+                        <input checked="" class="form-check-input ml-1" id="exampleRadios1" name="exampleRadios" type="radio" value="option1">
+                        <label class="form-check-label ml-4" for="exampleRadios1">
+                            Very Poor (far less than a standard FYP)
+                        </label>
+                        </input>
+                    </div>
+                    <div class="form-check col-md-6">
+                        <input class="form-check-input ml-1" id="exampleRadios2" name="exampleRadios" type="radio" value="option2">
+                        <label class="form-check-label ml-4" for="exampleRadios2">
+                            Poor (less than a standard FYP)
+                        </label>
+                        </input>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="form-check col-md-6">
+                        <input checked="" class="form-check-input ml-1" id="exampleRadios1" name="exampleRadios" type="radio" value="option1">
+                        <label class="form-check-label ml-4" for="exampleRadios1">
+                            Good (equal to a standard FYP)
+                        </label>
+                        </input>
+                    </div>
+                    <div class="form-check col-md-6">
+                        <input class="form-check-input ml-1" id="exampleRadios2" name="exampleRadios" type="radio" value="option2">
+                        <label class="form-check-label ml-4" for="exampleRadios2">
+                            Very Good (more than a standard FYP)
+                        </label>
+                        </input>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="form-check col">
+                        <input class="form-check-input ml-1" id="exampleRadios2" name="exampleRadios" type="radio" value="option2">
+                        <label class="form-check-label ml-4" for="exampleRadios2">
+                            Excellent (much more than a standard FYP)
+                        </label>
+                        </input>
+                    </div>
+                </div>
+                <!--Individual Evaluation-->
+                <div>
+                    <span>
+                        <h4 class="d-inline">
+                            Part B:
+                        </h4>
+                    </span>
+                    <span>
+                        <h4 class="d-inline ml-2">
+                            Individual Evaluation
+                        </h4>
+                    </span>
+                </div>
+                <table class="table-responsive table-bordered mt-3">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">
+                                Sr No
+                            </th>
+                            <th scope="col">
+                                Reg.No
+                            </th>
+                            <th scope="col">
+                                Student Name
+                            </th>
+                            <th scope="col">
+                                Functional Requirements(Max Marks=10)
+                            </th>
+                            <th scope="col">
+                                (Non Functional Requirements+Platform)(Max Marks=5)
+                            </th>
+                            <th scope="col">
+                                Use Case(Max Marks=15)
+                            </th>
+                            <th scope="col">
+                                Total Marks(30)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                1
+                            </th>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                2
+                            </th>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                3
+                            </th>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--Comments-->
+                <div class="form-group">
+                    <label for="inputSummery/Abstract ">
+                        <span class="text-danger">
+                            *
+                        </span>
+                        Comments (if any)
+                    </label>
+                    <textarea class="form-control" id="Summery/Abstract" name="text" rows="5">
+                        </textarea>
+                </div>
+                <div>
+                    date auto Select
+                </div>
+                <!--Buttons Save and Documents Latter-->
+                <div class="form-row">
+                    <div class="form-group text-right">
+                        <button class="btn btn-primary" type="submit">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--Code-->
+        <div class="container rounded formwidthfontcolor" id="InternalEvaluationId">
+            <form>
+                <div class="text-center">
+                    <h1>
+                        Internal Evaluation
+                    </h1>
+                </div>
+                <!--Project ID and Title-->
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputSuperviser">
+                            ProjectID
+                        </label>
+                        <select class="form-control" id="inputSuperviser">
+                            <option selected="">
+                                Choose...
+                            </option>
+                            <option>
+                                ...
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputTitle">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Title
+                        </label>
+                        <input class="form-control" id="inputTitle" placeholder="*Project Title" type="text">
+                        </input>
+                    </div>
+                </div>
+                <!--SuperViser and CoSuperviser -->
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputSuperviser">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Superviser
+                        </label>
+                        <select class="form-control" id="inputSuperviser">
+                            <option selected="">
+                                Choose...
+                            </option>
+                            <option>
+                                ...
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputCoSuperviser">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Co Superviser
+                        </label>
+                        <select class="form-control" id="inputCoSuperviser">
+                            <option selected="">
+                                Choose...
+                            </option>
+                            <option>
+                                ...
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <!--Project Evaluation-->
+                <div>
+                    <span>
+                        <h4 class="d-inline">
+                            Part A:
+                        </h4>
+                    </span>
+                    <span>
+                        <h4 class="d-inline ml-2">
+                            Project Evaluation
+                        </h4>
+                    </span>
+                    <div class="mt-2">
+                        <h6>
+                            Scope of the project:(Please tick one option)
+                        </h6>
+                    </div>
+                </div>
+                <!--Radio Button-->
+                <div class="row">
+                    <div class="form-check col-md-6">
+                        <input checked="" class="form-check-input ml-1" id="exampleRadios1" name="exampleRadios" type="radio" value="option1">
+                        <label class="form-check-label ml-4" for="exampleRadios1">
+                            Very Poor (far less than a standard FYP)
+                        </label>
+                        </input>
+                    </div>
+                    <div class="form-check col-md-6">
+                        <input class="form-check-input ml-1" id="exampleRadios2" name="exampleRadios" type="radio" value="option2">
+                        <label class="form-check-label ml-4" for="exampleRadios2">
+                            Poor (less than a standard FYP)
+                        </label>
+                        </input>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="form-check col-md-6">
+                        <input checked="" class="form-check-input ml-1" id="exampleRadios1" name="exampleRadios" type="radio" value="option1">
+                        <label class="form-check-label ml-4" for="exampleRadios1">
+                            Good (equal to a standard FYP)
+                        </label>
+                        </input>
+                    </div>
+                    <div class="form-check col-md-6">
+                        <input class="form-check-input ml-1" id="exampleRadios2" name="exampleRadios" type="radio" value="option2">
+                        <label class="form-check-label ml-4" for="exampleRadios2">
+                            Very Good (more than a standard FYP)
+                        </label>
+                        </input>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="form-check col">
+                        <input class="form-check-input ml-1" id="exampleRadios2" name="exampleRadios" type="radio" value="option2">
+                        <label class="form-check-label ml-4" for="exampleRadios2">
+                            Excellent (much more than a standard FYP)
+                        </label>
+                        </input>
+                    </div>
+                </div>
+                <!--Project Completion-->
+                <div>
+                    <div class="mt-3">
+                        <h6>
+                            Completion of the project
+                        </h6>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col">
+                        <label for="inputTitle">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Please mention the completion of FYP in percentage
+                        </label>
+                        <input class="form-control" id="inputTitle" placeholder="*Project Title" type="text">
+                        </input>
+                    </div>
+                </div>
+                <!--Individual Evaluation-->
+                <div>
+                    <span>
+                        <h4 class="d-inline">
+                            Part B:
+                        </h4>
+                    </span>
+                    <span>
+                        <h4 class="d-inline ml-2">
+                            Individual Evaluation
+                        </h4>
+                    </span>
+                </div>
+                <table class="table-responsive table-bordered mt-3">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">
+                                Sr No
+                            </th>
+                            <th scope="col">
+                                Reg.No
+                            </th>
+                            <th scope="col">
+                                Student Name
+                            </th>
+                            <th scope="col">
+                                Documentation(Quality+Completeness)(Max Marks=5)
+                            </th>
+                            <th scope="col">
+                                Implementation on Knowledge(Coding,etc.)(Max Marks=15)
+                            </th>
+                            <th scope="col">
+                                FYP Knowledge(Max Marks=5)
+                            </th>
+                            <th scope="col">
+                                Presentation on Skill(Max Marks=5)
+                            </th>
+                            <th scope="col">
+                                Total Marks(30)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                1
+                            </th>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                            <td>
+                                Mark
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                2
+                            </th>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                            <td>
+                                Mark
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                3
+                            </th>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                            <td>
+                                Mark
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--Comments-->
+                <div class="form-group">
+                    <label for="inputSummery/Abstract ">
+                        <span class="text-danger">
+                            *
+                        </span>
+                        Comments (if any)
+                    </label>
+                    <textarea class="form-control" id="Summery/Abstract" name="text" rows="5">
+                        </textarea>
+                </div>
+                <div>
+                    date auto Select
+                </div>
+                <!--Buttons Save and Documents Latter-->
+                <div class="form-row">
+                    <div class="form-group text-right">
+                        <button class="btn btn-primary" type="submit">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--Supervisor Evaluation -->
+        <div class="container rounded formwidthfontcolor" id="SupervisorEvaluationId">
+            <form>
+                <div class="text-center">
+                    <h1>
+                        Supervisor Evaluation
+                    </h1>
+                </div>
+                <!--Project ID and Title-->
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputSuperviser">
+                            ProjectID
+                        </label>
+                        <select class="form-control" id="inputSuperviser">
+                            <option selected="">
+                                Choose...
+                            </option>
+                            <option>
+                                ...
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputTitle">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Title
+                        </label>
+                        <input class="form-control" id="inputTitle" placeholder="*Project Title" type="text">
+                        </input>
+                    </div>
+                </div>
+                <!--SuperViser and CoSuperviser -->
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputSuperviser">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Superviser
+                        </label>
+                        <select class="form-control" id="inputSuperviser">
+                            <option selected="">
+                                Choose...
+                            </option>
+                            <option>
+                                ...
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputCoSuperviser">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Co Superviser
+                        </label>
+                        <select class="form-control" id="inputCoSuperviser">
+                            <option selected="">
+                                Choose...
+                            </option>
+                            <option>
+                                ...
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <!--Project Evaluation-->
+                <div>
+                    <span>
+                        <h4 class="d-inline">
+                            Part A:
+                        </h4>
+                    </span>
+                    <span>
+                        <h4 class="d-inline ml-2">
+                            Project Evaluation
+                        </h4>
+                    </span>
+                    <div class="mt-2">
+                        <h6>
+                            Scope of the project:(Please tick one option)
+                        </h6>
+                    </div>
+                </div>
+                <!--Radio Button-->
+                <div class="row">
+                    <div class="form-check col-md-6">
+                        <input checked="" class="form-check-input ml-1" id="exampleRadios1" name="exampleRadios" type="radio" value="option1">
+                        <label class="form-check-label ml-4" for="exampleRadios1">
+                            Very Poor (far less than a standard FYP)
+                        </label>
+                        </input>
+                    </div>
+                    <div class="form-check col-md-6">
+                        <input class="form-check-input ml-1" id="exampleRadios2" name="exampleRadios" type="radio" value="option2">
+                        <label class="form-check-label ml-4" for="exampleRadios2">
+                            Poor (less than a standard FYP)
+                        </label>
+                        </input>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="form-check col-md-6">
+                        <input checked="" class="form-check-input ml-1" id="exampleRadios1" name="exampleRadios" type="radio" value="option1">
+                        <label class="form-check-label ml-4" for="exampleRadios1">
+                            Good (equal to a standard FYP)
+                        </label>
+                        </input>
+                    </div>
+                    <div class="form-check col-md-6">
+                        <input class="form-check-input ml-1" id="exampleRadios2" name="exampleRadios" type="radio" value="option2">
+                        <label class="form-check-label ml-4" for="exampleRadios2">
+                            Very Good (more than a standard FYP)
+                        </label>
+                        </input>
+                    </div>
+                </div>
+                <div class="row mt-1">
+                    <div class="form-check col">
+                        <input class="form-check-input ml-1" id="exampleRadios2" name="exampleRadios" type="radio" value="option2">
+                        <label class="form-check-label ml-4" for="exampleRadios2">
+                            Excellent (much more than a standard FYP)
+                        </label>
+                        </input>
+                    </div>
+                </div>
+                <!--Project Completion-->
+                <div>
+                    <div class="mt-3">
+                        <h6>
+                            Completion of the project
+                        </h6>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col">
+                        <label for="inputTitle">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Please mention the completion of FYP in percentage
+                        </label>
+                        <input class="form-control" id="inputTitle" placeholder="*Project Title" type="text">
+                        </input>
+                    </div>
+                </div>
+                <!--Individual Evaluation-->
+                <div>
+                    <span>
+                        <h4 class="d-inline">
+                            Part B:
+                        </h4>
+                    </span>
+                    <span>
+                        <h4 class="d-inline ml-2">
+                            Individual Evaluation
+                        </h4>
+                    </span>
+                </div>
+                <table class="table-responsive table-bordered mt-3">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">
+                                Sr No
+                            </th>
+                            <th scope="col">
+                                Reg.No
+                            </th>
+                            <th scope="col">
+                                Student Name
+                            </th>
+                            <th scope="col">
+                                Documentation(Quality+Completeness)(Max Marks=5)
+                            </th>
+                            <th scope="col">
+                                Implementation on Knowledge(Coding,etc.)(Max Marks=15)
+                            </th>
+                            <th scope="col">
+                                FYP Knowledge(Max Marks=5)
+                            </th>
+                            <th scope="col">
+                                Presentation on Skill(Max Marks=5)
+                            </th>
+                            <th scope="col">
+                                Overall Contribution(Max Marks=10)
+                            </th>
+                            <th scope="col">
+                                Total Marks(40)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                1
+                            </th>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Mark
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                2
+                            </th>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Mark
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                3
+                            </th>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                            <td>
+                                Mark
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--Comments-->
+                <div class="form-group">
+                    <label for="inputSummery/Abstract ">
+                        <span class="text-danger">
+                            *
+                        </span>
+                        Comments (if any)
+                    </label>
+                    <textarea class="form-control" id="Summery/Abstract" name="text" rows="5">
+                        </textarea>
+                </div>
+                <div>
+                    date auto Select
+                </div>
+                <!--Buttons Save and Documents Latter-->
+                <div class="form-row">
+                    <div class="form-group text-right">
+                        <button class="btn btn-primary" type="submit">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--idea-->
+        <div class="container rounded formwidthfontcolor" id="AddIdeaId">
+            <div class="row justify-content-last">
+                <div class="col text-left mt-2">
+                    <div class="btn-group">
+                        <a class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown" href="" id="dLabel" role="button" style="color: white;background-color:#1d274a;">
+                            Fyp Ideas
+                        </a>
+                        <ul aria-labelledby="dropdownMenu" class="dropdown-menu" role="menu">
+                            <li>
+                                <a class="dropdown-item AddIdealink" href="#">
+                                    Add Idea
+                                </a>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="#" tabindex="-1">
+                                    View Ideas
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item AllIdealink" href="#">
+                                            All
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item OwnIdealink" href="#">
+                                            Own
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <form>
+                <div class="text-center">
+                    <h1>
+                        Add Ideas
+                    </h1>
+                </div>
+                <!--Project Title-->
+                <div class="form-group">
+                    <label for="inputTitle">
+                        <span class="text-danger">
+                            *
+                        </span>
+                        Title
+                    </label>
+                    <input class="form-control" id="inputTitle" placeholder="*Project Title" type="text">
+                    </input>
+                </div>
+                <!--Project Domain-->
+                <div class="form-group">
+                    <label for="inputTitle">
+                        <span class="text-danger">
+                            *
+                        </span>
+                        Domain
+                        <small>
+                            (e.g Networking/Machine Learning)
+                        </small>
+                    </label>
+                    <input class="form-control" id="inputTitle" placeholder="*Domain Name" type="text">
+                    </input>
+                </div>
+                <!--Allied Field-->
+                <div class="form-group">
+                    <label for="inputTitle">
+                        <span class="text-danger">
+                            *
+                        </span>
+                        Allied Field
+                        <small>
+                            (e.g  )
+                        </small>
+                    </label>
+                    <input class="form-control" id="inputTitle" placeholder="*Allied field" type="text">
+                    </input>
+                </div>
+                <!--Summary-->
+                <div class="form-group">
+                    <label for="inputSummery/Abstract ">
+                        <span class="text-danger">
+                            *
+                        </span>
+                        Summery (20 To 1000 Words)
+                    </label>
+                    <textarea class="form-control" id="Summery/Abstract" name="text" rows="5">
+                        </textarea>
+                </div>
+                <!--Upload File-->
+                <div class="form-group">
+                    <label for="exampleFormControlFile1">
+                        <span class="text-danger">
+                            *
+                        </span>
+                        File Type(.Doc/.ppt/.pdf)
+                    </label>
+                    <input class="form-control-file" id="exampleFormControlFile1" type="file">
+                    </input>
+                </div>
+                <!--Buttons Save and Documents Latter-->
+                <div class="form-row">
+                    <div class="form-group text-right">
+                        <button class="btn btn-primary" type="submit">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="container formwidthfontcolor" id="OwnIdeaId">
+            <div class="row justify-content-last">
+                <div class="col text-left mt-2">
+                    <div class="btn-group">
+                        <a class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown" href="" id="dLabel" role="button" style="color: white;background-color:#1d274a;">
+                            Fyp Ideas
+                        </a>
+                        <ul aria-labelledby="dropdownMenu" class="dropdown-menu" role="menu">
+                            <li>
+                                <a class="dropdown-item AddIdealink" href="#">
+                                    Add Idea
+                                </a>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="#" tabindex="-1">
+                                    View Ideas
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item AllIdealink" href="#">
+                                            All
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item OwnIdealink" href="#">
+                                            Own
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <form>
+                <div class="text-center">
+                    <h1>
+                        Own Ideas
+                    </h1>
+                </div>
+                <!--View Own Idea-->
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">
+                                Sr#
+                            </th>
+                            <th scope="col">
+                                Title
+                            </th>
+                            <th scope="col">
+                                Domain
+                            </th>
+                            <th scope="col">
+                                Allied Field
+                            </th>
+                            <th scope="col">
+                                Edit/Delete
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                1
+                            </th>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                2
+                            </th>
+                            <td>
+                                Jacob
+                            </td>
+                            <td>
+                                Thornton
+                            </td>
+                            <td>
+                                fat
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                3
+                            </th>
+                            <td>
+                                Larry
+                            </td>
+                            <td>
+                                the Bird
+                            </td>
+                            <td>
+                                twitter
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+        <!--All Idea-->
+        <div class="container formwidthfontcolor" id="AllIdeaId">
+            <div class="row justify-content-last">
+                <div class="col text-left mt-2">
+                    <div class="btn-group">
+                        <a class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown" href="" id="dLabel" role="button" style="color: white;background-color:#1d274a;">
+                            Fyp Ideas
+                        </a>
+                        <ul aria-labelledby="dropdownMenu" class="dropdown-menu" role="menu">
+                            <li>
+                                <a class="dropdown-item AddIdealink" href="#">
+                                    Add Idea
+                                </a>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="#" tabindex="-1">
+                                    View Ideas
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item AllIdealink" href="#">
+                                            All
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item OwnIdealink" href="#">
+                                            Own
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <form>
+                <div class="text-center">
+                    <h1>
+                        All Ideas
+                    </h1>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm">
+                        <span>
+                            Start Date:
+                        </span>
+                        <input id="startDate" width="276" />
+                    </div>
+                    <div class="col-sm">
+                        <span>
+                            End Date:
+                        </span>
+                        <input id="endDate" width="276" />
+                    </div>
+                </div>
+                <!--All Ideas-->
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">
+                                Sr#
+                            </th>
+                            <th scope="col">
+                                Title
+                            </th>
+                            <th scope="col">
+                                Domain
+                            </th>
+                            <th scope="col">
+                                Allied Field
+                            </th>
+                            <th scope="col">
+                                Details
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                1
+                            </th>
+                            <td>
+                                Mark
+                            </td>
+                            <td>
+                                Otto
+                            </td>
+                            <td>
+                                mdo
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                2
+                            </th>
+                            <td>
+                                Jacob
+                            </td>
+                            <td>
+                                Thornton
+                            </td>
+                            <td>
+                                fat
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                3
+                            </th>
+                            <td>
+                                Larry
+                            </td>
+                            <td>
+                                the Bird
+                            </td>
+                            <td>
+                                twitter
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+        <!--Footer-->
+        <div class="row mt-3">
+            <div class="col footerbackgroundcolor">
+                <div class="text-center mt-3 footertextcolor">
+                    <a href="#">
+                        FYPOnline,
+                    </a>
+                    Principal Seat © 2018-COMSATS ®
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#MeetingId").show();
+            $("#ProposalInternalEvaluationId").hide();
+            $("#SddEvaluationId").hide();
+            $("#SrsEvaluationId").hide();
+            $("#InternalEvaluationId").hide();
+            $("#SupervisorEvaluationId").hide();
+            $("#AddIdeaId").hide();
+            $("#AllIdeaId").hide();
+            $("#OwnIdeaId").hide();
+        });
+
+        $(".Meetinglink").click(function () {
+            $("#MeetingId").show();
+            $("#ProposalInternalEvaluationId").hide();
+            $("#SddEvaluationId").hide();
+            $("#SrsEvaluationId").hide();
+            $("#InternalEvaluationId").hide();
+            $("#SupervisorEvaluationId").hide();
+            $("#AddIdeaId").hide();
+            $("#AllIdeaId").hide();
+            $("#OwnIdeaId").hide();
+        });
+        $(".ProposalInternalEvaluationlink").click(function () {
+            $("#MeetingId").hide();
+            $("#ProposalInternalEvaluationId").show();
+            $("#SddEvaluationId").hide();
+            $("#SrsEvaluationId").hide();
+            $("#InternalEvaluationId").hide();
+            $("#SupervisorEvaluationId").hide();
+            $("#AddIdeaId").hide();
+            $("#AllIdeaId").hide();
+            $("#OwnIdeaId").hide();
+        });
+        $(".SddEvaluationlink").click(function () {
+            $("#MeetingId").hide();
+            $("#ProposalInternalEvaluationId").hide();
+            $("#SddEvaluationId").show();
+            $("#SrsEvaluationId").hide();
+            $("#InternalEvaluationId").hide();
+            $("#SupervisorEvaluationId").hide();
+            $("#AddIdeaId").hide();
+            $("#AllIdeaId").hide();
+            $("#OwnIdeaId").hide();
+        });
+        $(".SrsEvaluationlink").click(function () {
+            $("#MeetingId").hide();
+            $("#ProposalInternalEvaluationId").hide();
+            $("#SddEvaluationId").hide();
+            $("#SrsEvaluationId").show();
+            $("#InternalEvaluationId").hide();
+            $("#SupervisorEvaluationId").hide();
+            $("#AddIdeaId").hide();
+            $("#AllIdeaId").hide();
+            $("#OwnIdeaId").hide();
+        });
+        $(".InternalEvaluationlink").click(function () {
+            $("#MeetingId").hide();
+            $("#ProposalInternalEvaluationId").hide();
+            $("#SddEvaluationId").hide();
+            $("#SrsEvaluationId").hide();
+            $("#InternalEvaluationId").show();
+            $("#SupervisorEvaluationId").hide();
+            $("#AddIdeaId").hide();
+            $("#AllIdeaId").hide();
+            $("#OwnIdeaId").hide();
+        });
+        $(".SupervisorEvaluationlink").click(function () {
+            $("#MeetingId").hide();
+            $("#ProposalInternalEvaluationId").hide();
+            $("#SddEvaluationId").hide();
+            $("#SrsEvaluationId").hide();
+            $("#InternalEvaluationId").hide();
+            $("#SupervisorEvaluationId").show();
+            $("#AddIdeaId").hide();
+            $("#AllIdeaId").hide();
+            $("#OwnIdeaId").hide();
+        });
+        $(".AddIdealink").click(function () {
+            $("#MeetingId").hide();
+            $("#ProposalInternalEvaluationId").hide();
+            $("#SddEvaluationId").hide();
+            $("#SrsEvaluationId").hide();
+            $("#InternalEvaluationId").hide();
+            $("#SupervisorEvaluationId").hide();
+            $("#AddIdeaId").show();
+            $("#AllIdeaId").hide();
+            $("#OwnIdeaId").hide();
+        });
+        $(".AllIdealink").click(function () {
+            $("#MeetingId").hide();
+            $("#ProposalInternalEvaluationId").hide();
+            $("#SddEvaluationId").hide();
+            $("#SrsEvaluationId").hide();
+            $("#InternalEvaluationId").hide();
+            $("#SupervisorEvaluationId").hide();
+            $("#AddIdeaId").hide();
+            $("#AllIdeaId").show();
+            $("#OwnIdeaId").hide();
+        });
+        $(".OwnIdealink").click(function () {
+            $("#MeetingId").hide();
+            $("#ProposalInternalEvaluationId").hide();
+            $("#SddEvaluationId").hide();
+            $("#SrsEvaluationId").hide();
+            $("#InternalEvaluationId").hide();
+            $("#SupervisorEvaluationId").hide();
+            $("#AddIdeaId").hide();
+            $("#AllIdeaId").hide();
+            $("#OwnIdeaId").show();
+        });
+    </script>
+    <script>
+        var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+        $('#startDate').datepicker({
+            uiLibrary: 'bootstrap4',
+            iconsLibrary: 'fontawesome',
+            minDate: today,
+            maxDate: function () {
+                return $('#endDate').val();
+            }
+        });
+        $('#endDate').datepicker({
+            uiLibrary: 'bootstrap4',
+            iconsLibrary: 'fontawesome',
+            minDate: function () {
+                return $('#startDate').val();
+            }
+        });
+    </script>
+</body>
+</html>
