@@ -118,357 +118,370 @@
         </div>
         <hr class="style1" />
         <!--Proposal-->
-        <div class="container rounded formwidthfontcolor" id="Proposal">
-            <form>
-                <div class="text-center">
-                    <h1>
-                        Proposal
-                    </h1>
-                </div>
-                <div class="form-row">
-                    <label>
-                        <strong>
-                            Team Members:
-                        </strong>
-                    </label>
-                </div>
-                <!--First member-->
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <label for="inputCity">
-                            <span class="text-danger">
-                                *
-                            </span>
-                            RegNo
+        @using (Html.BeginForm("StudentDashBoard", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="container rounded formwidthfontcolor" id="Proposal">
+                <form>
+                    <div class="text-center">
+                        <h1>Proposal</h1>
+                    </div>
+                    <div class="form-row">
+                        <label>
+                            <strong>
+                                Team Members:
+                            </strong>
                         </label>
-                        <input class="form-control" id="inputCity" placeholder="*RegNo" type="text">
-                        </input>
                     </div>
-                    <div class="form-group col-md-4">
-                        <label for="inputName">
-                            <span class="text-danger">
-                                *
-                            </span>
-                            Name
+                    <!--First member-->
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputCity">
+                                <span class="text-danger">*</span> RegNo
+                            </label>
+                            @Html.EditorFor(model => model.RegNo1, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.RegNo1, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputName">
+                                <span class="text-danger">*</span>Name
+                            </label>
+                            @Html.EditorFor(model => model.StudentName1, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.StudentName1, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputSemester">
+                                <span class="text-danger">*</span>Semester
+                            </label>
+                            @Html.DropDownListFor(Model => Model.Semester1, ViewBag.semesterlist as SelectList, "Semester", htmlAttributes: new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputCity">
+                                <span class="text-danger">*</span> Email
+                            </label>
+                            @Html.EditorFor(model => model.Email1, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Email1, "", new { type = "email", @class = "text-danger" })
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputName">
+                                <span class="text-danger">*</span>Contact No
+                            </label>
+                            @Html.EditorFor(model => model.ContactNo1, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.ContactNo1, "", new { @class = "text-danger" })
+                        </div>
+
+                    </div>
+                    <!--Second member-->
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputCity">
+                                RegNo
+                            </label>
+                            @Html.EditorFor(model => model.RegNo2, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.RegNo2, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputName">
+                                Name
+                            </label>
+                            @Html.EditorFor(model => model.StudentName2, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.StudentName2, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputSemester">
+                                Semester
+                            </label>
+                            @Html.DropDownListFor(Model => Model.Semester2, ViewBag.semesterlist as SelectList, "Semester", htmlAttributes: new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputCity">
+                                <span class="text-danger">*</span> Email
+                            </label>
+                            @Html.EditorFor(model => model.Email2, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Email2, "", new { type = "email", @class = "text-danger" })
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputName">
+                                <span class="text-danger">*</span>Contact No
+                            </label>
+                            @Html.EditorFor(model => model.ContactNo2, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.ContactNo2, "", new { @class = "text-danger" })
+                        </div>
+
+                    </div>
+                    <!--Third member-->
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputCity">
+                                RegNo
+                            </label>
+                            @Html.EditorFor(model => model.RegNo3, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.RegNo3, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputName">
+                                Name
+                            </label>
+                            @Html.EditorFor(model => model.StudentName3, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.StudentName3, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputSemester">
+                                Semester
+                            </label>
+                            @Html.DropDownListFor(Model => Model.Semester3, ViewBag.semesterlist as SelectList, "Semester", htmlAttributes: new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputCity">
+                                <span class="text-danger">*</span> Email
+                            </label>
+                            @Html.EditorFor(model => model.Email3, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Email3, "", new { type = "email", @class = "text-danger" })
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputName">
+                                <span class="text-danger">*</span>Contact No
+                            </label>
+                            @Html.EditorFor(model => model.ContactNo3, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.ContactNo3, "", new { @class = "text-danger" })
+                        </div>
+
+                    </div>
+                    <!--Forth member-->
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputCity">
+                                RegNo
+                            </label>
+                            @Html.EditorFor(model => model.RegNo4, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.RegNo4, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputName">
+                                Name
+                            </label>
+                            @Html.EditorFor(model => model.StudentName4, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.StudentName4, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputSemester">
+                                s
+                                Semester
+                            </label>
+                            @Html.DropDownListFor(Model => Model.Semester4, ViewBag.semesterlist as SelectList, "Semester", htmlAttributes: new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputCity">
+                                <span class="text-danger">*</span> Email
+                            </label>
+                            @Html.EditorFor(model => model.Email4, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Email4, "", new { type = "email", @class = "text-danger" })
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputName">
+                                <span class="text-danger">*</span>Contact No
+                            </label>
+                            @Html.EditorFor(model => model.ContactNo4, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.ContactNo4, "", new { @class = "text-danger" })
+                        </div>
+
+                    </div>
+                    <!--Project Title-->
+                    <div class="form-group">
+                        <label for="inputTitle">
+                            <span class="text-danger">*</span>Title
                         </label>
-                        <input class="form-control" id="inputName" placeholder="*Name" type="text">
-                        </input>
+                        @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
                     </div>
-                    <div class="form-group col-md-4">
-                        <label for="inputSemester">
-                            <span class="text-danger">
-                                *
-                            </span>
-                            Semester
+                    <!--SuperViser and CoSuperviser -->
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputSuperviser">
+                                <span class="text-danger">*</span>Superviser
+                            </label>
+                            @Html.DropDownListFor(Model => Model.Supervisor, ViewBag.semesterlist1 as SelectList, "Supervisor", htmlAttributes: new { @class = "form-control" })
+
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputCoSuperviser">
+                                Co Superviser
+                            </label>
+                            @Html.DropDownListFor(Model => Model.CoSupervisor, ViewBag.semesterlist2 as SelectList, "Co Supervisor", htmlAttributes: new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <!--Summary-->
+                    <div class="form-group">
+                        <label for="inputSummery/Abstract ">
+                            <span class="text-danger">*</span> Summery / Abstract (100 To 300 Words)
                         </label>
-                        <select class="form-control" id="inputSemester">
-                            <option selected="">
-                                Choose...
-                            </option>
-                            <option>
-                                ...
-                            </option>
-                        </select>
+                        @Html.TextAreaFor(model => model.Summary, new { cols = 30, rows = 5, @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Summary, "", new { @class = "text-danger" })
                     </div>
-                </div>
-                <!--Second member-->
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <label for="inputCity">
-                            RegNo
+                    <!--Objective-->
+                    <div class="form-group">
+                        <label for="inputObjective">
+                            <span class="text-danger">*</span> Objective (1 To 50 Words)
                         </label>
-                        <input class="form-control" id="inputCity" placeholder="*RegNo" type="text">
-                        </input>
+                        @Html.TextAreaFor(model => model.Objective, new { cols = 30, rows = 5, @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Objective, "", new { @class = "text-danger" })
                     </div>
-                    <div class="form-group col-md-4">
-                        <label for="inputName">
-                            Name
+                    <!--Scope-->
+                    <div class="form-group">
+                        <label for="inputObjective">
+                            <span class="text-danger">*</span> Scope (100 Words)
                         </label>
-                        <input class="form-control" id="inputName" placeholder="*Name" type="text">
-                        </input>
+                        @Html.TextAreaFor(model => model.Scope, new { cols = 30, rows = 5, @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Scope, "", new { @class = "text-danger" })
                     </div>
-                    <div class="form-group col-md-4">
-                        <label for="inputSemester">
-                            Semester
+                    <!--Tools and Technologies-->
+                    <div class="form-group">
+                        <label for="inputObjective">
+                            <span class="text-danger">*</span>Tools and Technologies
                         </label>
-                        <select class="form-control" id="inputSemester">
-                            <option selected="">
-                                Choose...
-                            </option>
-                            <option>
-                                ...
-                            </option>
-                        </select>
+                        @Html.TextAreaFor(model => model.ToolsAndTechnologies, new { cols = 30, rows = 5, @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.ToolsAndTechnologies, "", new { @class = "text-danger" })
                     </div>
-                </div>
-                <!--Third member-->
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <label for="inputCity">
-                            RegNo
+                    <!--Upload File-->
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">
+                            <span class="text-danger">*</span> File Type(.Doc/.ppt/.pdf)
                         </label>
-                        <input class="form-control" id="inputCity" placeholder="*RegNo" type="text">
-                        </input>
+
+                        @Html.TextBox("ProposalFile", "", new { Type = "file", @class = "form-control" })<br />
                     </div>
-                    <div class="form-group col-md-4">
-                        <label for="inputName">
-                            Name
-                        </label>
-                        <input class="form-control" id="inputName" placeholder="*Name" type="text">
-                        </input>
+                    <!--Buttons Save and Documents Latter-->
+                    <div class="form-row">
+                        <div class="form-group col-6">
+                            <button class="btn btn-primary" type="submit">
+                                Submit
+                            </button>
+                        </div>
+                        <div class="form-group col-6 text-right">
+                            <button class="btn btn-primary" type="Documents">
+                                Save/DocumentsLatter
+                            </button>
+                        </div>
+
                     </div>
-                    <div class="form-group col-md-4">
-                        <label for="inputSemester">
-                            Semester
-                        </label>
-                        <select class="form-control" id="inputSemester">
-                            <option selected="">
-                                Choose...
-                            </option>
-                            <option>
-                                ...
-                            </option>
-                        </select>
-                    </div>
-                </div>
-                <!--Forth member-->
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <label for="inputCity">
-                            RegNo
-                        </label>
-                        <input class="form-control" id="inputCity" placeholder="*RegNo" type="text">
-                        </input>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="inputName">
-                            Name
-                        </label>
-                        <input class="form-control" id="inputName" placeholder="*Name" type="text">
-                        </input>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="inputSemester">
-                            Semester
-                        </label>
-                        <select class="form-control" id="inputSemester">
-                            <option selected="">
-                                Choose...
-                            </option>
-                            <option>
-                                ...
-                            </option>
-                        </select>
-                    </div>
-                </div>
-                <!--Project Title-->
-                <div class="form-group">
-                    <label for="inputTitle">
-                        <span class="text-danger">
-                            *
-                        </span>
-                        Title
-                    </label>
-                    <input class="form-control" id="inputTitle" placeholder="*Project Title" type="text">
-                    </input>
-                </div>
-                <!--SuperViser and CoSuperviser -->
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputSuperviser">
-                            <span class="text-danger">
-                                *
-                            </span>
-                            Superviser
-                        </label>
-                        <select class="form-control" id="inputSuperviser">
-                            <option selected="">
-                                Choose...
-                            </option>
-                            <option>
-                                ...
-                            </option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputCoSuperviser">
-                            Co Superviser
-                        </label>
-                        <select class="form-control" id="inputCoSuperviser">
-                            <option selected="">
-                                Choose...
-                            </option>
-                            <option>
-                                ...
-                            </option>
-                        </select>
-                    </div>
-                </div>
-                <!--Summary-->
-                <div class="form-group">
-                    <label for="inputSummery/Abstract ">
-                        <span class="text-danger">
-                            *
-                        </span>
-                        Summery / Abstract (100 To 300 Words)
-                    </label>
-                    <textarea class="form-control" id="Summery/Abstract" name="text" rows="5">
-                        </textarea>
-                </div>
-                <!--Objective-->
-                <div class="form-group">
-                    <label for="inputObjective">
-                        <span class="text-danger">
-                            *
-                        </span>
-                        Objective (1 To 50 Words)
-                    </label>
-                    <textarea class="form-control" id="Objective" name="text" rows="4">
-                        </textarea>
-                </div>
-                <!--Scope-->
-                <div class="form-group">
-                    <label for="inputObjective">
-                        <span class="text-danger">
-                            *
-                        </span>
-                        Scope (100 Words)
-                    </label>
-                    <textarea class="form-control" id="Objective" name="text" rows="4">
-                        </textarea>
-                </div>
-                <!--Tools and Technologies-->
-                <div class="form-group">
-                    <label for="inputObjective">
-                        <span class="text-danger">
-                            *
-                        </span>
-                        Tools and Technologies
-                    </label>
-                    <textarea class="form-control" id="Objective" name="text" rows="4">
-                        </textarea>
-                </div>
-                <!--Upload File-->
-                <div class="form-group">
-                    <label for="exampleFormControlFile1">
-                        <span class="text-danger">
-                            *
-                        </span>
-                        File Type(.zip/.rar)
-                    </label>
-                    <input class="form-control-file" id="exampleFormControlFile1" type="file">
-                    </input>
-                </div>
-                <!--Buttons Save and Documents Latter-->
-                <div class="form-row">
-                    <div class="form-group col">
-                        <button class="btn btn-primary" type="Documents">
-                            Documents
-                        </button>
-                    </div>
-                </div>
-            </form>
-        </div>
+                </form>
+            </div>
+        }
         <!--Srs Portion-->
-        <div class="container formwidthfontcolor" id="Srs">
-            <form>
-                <div class="text-center">
-                    <h1>
-                        SRS
-                    </h1>
-                </div>
-                <!--Upload File-->
-                <div class="form-group">
-                    <label for="exampleFormControlFile1">
-                        File Type(.zip/.rar)
-                    </label>
-                    <input class="form-control-file" id="exampleFormControlFile1" type="file">
-                    </input>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <button class="btn btn-primary" type="Documents">
-                            Documents
-                        </button>
+        @using (Html.BeginForm("StudentDashBoard", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="container formwidthfontcolor" id="Srs">
+                <form>
+                    <div class="text-center">
+                        <h1>SRS</h1>
                     </div>
-                </div>
-            </form>
-        </div>
+                    <!--Upload File-->
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">
+                            File Type(.Doc/.ppt/.pdf)
+                        </label>
+
+                        @Html.TextBox("SrsFile", "", new { Type = "file", @class = "form-control" })<br />
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <button class="btn btn-primary" type="submit">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        }
         <!--Sre Portion-->
-        <div class="container formwidthfontcolor" id="Sre">
-            <form>
-                <div class="text-center">
-                    <h1>
-                        SRE
-                    </h1>
-                </div>
-                <!--Upload File-->
-                <div class="form-group">
-                    <label for="exampleFormControlFile1">
-                        File Type(.zip/.rar)
-                    </label>
-                    <input class="form-control-file" id="exampleFormControlFile1" type="file">
-                    </input>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <button class="btn btn-primary" type="Documents">
-                            Documents
-                        </button>
+        @using (Html.BeginForm("StudentDashBoard", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="container formwidthfontcolor" id="Sre">
+                <form>
+                    <div class="text-center">
+                        <h1>SRE</h1>
                     </div>
-                </div>
-            </form>
-        </div>
+                    <!--Upload File-->
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">
+                            File Type(.Doc/.ppt/.pdf)
+                        </label>
+
+                        @Html.TextBox("SreFile", "", new { Type = "file", @class = "form-control" })<br />
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <button class="btn btn-primary" type="submit">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        }
         <!--Final Report-->
-        <div class="container formwidthfontcolor" id="FinalReport">
-            <form>
-                <div class="text-center">
-                    <h1>
-                        Final Report
-                    </h1>
-                </div>
-                <!--Upload File-->
-                <div class="form-group">
-                    <label for="exampleFormControlFile1">
-                        File Type(.zip/.rar)
-                    </label>
-                    <input class="form-control-file" id="exampleFormControlFile1" type="file">
-                    </input>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <button class="btn btn-primary" type="Submit">
-                            Submit
-                        </button>
+        @using (Html.BeginForm("StudentDashBoard", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="container formwidthfontcolor" id="FinalReport">
+                <form>
+                    <div class="text-center">
+                        <h1>Final Report</h1>
                     </div>
-                </div>
-            </form>
-        </div>
+                    <!--Upload File-->
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">
+                            File Type(.Doc/.ppt/.pdf)
+                        </label>
+                        @Html.TextBox("FinalReport", "", new { Type = "file", @class = "form-control" })<br />
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <button class="btn btn-primary" type="Submit">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        }
         <!--Code-->
-        <div class="container formwidthfontcolor" id="Code">
-            <form>
-                <div class="text-center">
-                    <h1>
-                        Code
-                    </h1>
-                </div>
-                <!--Upload File-->
-                <div class="form-group">
-                    <label for="exampleFormControlFile1">
-                        File Type(.zip/.rar)
-                    </label>
-                    <input class="form-control-file" id="exampleFormControlFile1" type="file">
-                    </input>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <button class="btn btn-primary" type="Submit">
-                            Submit
-                        </button>
+        @using (Html.BeginForm("StudentDashBoard", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="container formwidthfontcolor" id="Code">
+                <form>
+                    <div class="text-center">
+                        <h1>CODE</h1>
                     </div>
-                </div>
-            </form>
-        </div>
+                    <!--Upload File-->
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">
+                            File Type(.Doc/.ppt/.pdf)
+                        </label>
+
+                        @Html.TextBox("Code", "", new { Type = "file", @class = "form-control" })<br />
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <button class="btn btn-primary" type="submit">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        }
         <!--Footer-->
         <div class="row mt-3">
             <div class="col footerbackgroundcolor">

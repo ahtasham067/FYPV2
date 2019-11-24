@@ -263,5 +263,9 @@ namespace FYPV1.Models
         public System.Data.Entity.DbSet<FYPV1.ViewModels.TeacherDashBoardVM> TeacherDashBoardVMs { get; set; }
 
         public System.Data.Entity.DbSet<FYPV1.ViewModels.AdminDashBoardVM> AdminDashBoardVMs { get; set; }
+
+        public System.Data.Entity.DbSet<FYPV1.ViewModels.SignUpVM> SignUpVMs { get; set; }
+
+        public System.Data.Entity.DbSet<FYPV1.ViewModels.LogInVM> LogInVMs { get; set; }
     }
 }

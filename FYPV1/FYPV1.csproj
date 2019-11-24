@@ -145,6 +145,7 @@
     <Compile Include="Models\Campu.cs" />
     <Compile Include="Models\Co_Supervisor.cs" />
     <Compile Include="Models\Domain.cs" />
+    <Compile Include="Models\encryptPassword.cs" />
     <Compile Include="Models\Fyp_Idea.cs" />
     <Compile Include="Models\Internal_Evaluation.cs" />
     <Compile Include="Models\Internal_Evaluation_Student.cs" />
@@ -162,6 +163,8 @@
     <Compile Include="Models\Teacher_SignUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AdminDashBoardVM.cs" />
+    <Compile Include="ViewModels\LogInVM.cs" />
+    <Compile Include="ViewModels\SignUpVM.cs" />
     <Compile Include="ViewModels\StudentDashBoardVM.cs" />
     <Compile Include="ViewModels\TeacherDashBoardVM.cs" />
   </ItemGroup>
@@ -277,6 +280,8 @@
     <Content Include="vendors\ti-icons\fonts\themify.ttf" />
     <Content Include="vendors\ti-icons\fonts\themify.woff" />
     <Content Include="Views\Home\AdminDashBoard.cshtml" />
+    <Content Include="Views\Home\SignUp.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

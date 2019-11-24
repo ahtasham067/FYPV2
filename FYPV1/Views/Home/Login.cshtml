@@ -1,0 +1,197 @@
+﻿@model FYPV1.ViewModels.LogInVM
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>
+        FYPOnline Student Portal
+    </title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
+    </script>
+    <script src="~/JavaScript/Student.js"></script>
+    <link href="~/CSS/Student.css" rel="stylesheet" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+    </script>
+    </link>
+    </meta>
+    </meta>
+</head>
+<body>
+    <div class="container backgroungcolor">
+        <div class="row justify-content-md-center">
+            <div class="cl">
+                <img alt="Responsive image" class="img-fluid" src="~/Images/cuis_bg5.png">
+                </img>
+            </div>
+            <div class="col text-center mt-5">
+                <div class="btn-group">
+                    <button aria-expanded="false" aria-haspopup="true" class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown" type="button">
+                        Log In
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item StudentSinUp" href="#">
+                            Student LogIn
+                        </a>
+                        <a class="dropdown-item TeacherSinUp" href="#">
+                            Teacher LogIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="style1">
+        <!-- Student Sin Up -->
+        @using (Html.BeginForm("LogIn", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="container rounded formwidthfontcolor" id="StudentSinUp">
+                <form>
+                    <div class="text-center">
+                        <h1>
+                            Student LogIn
+                        </h1>
+                    </div>
+                    <!--First member-->
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label for="inputSemester">
+                                <span class="text-danger">
+                                    *
+                                </span>
+                                Campus
+                            </label>
+                            @Html.DropDownListFor(Model => Model.Campus, ViewBag.campuslist as SelectList, "Campus", htmlAttributes: new { @class = "form-control" })
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="inputSemester">
+                                <span class="text-danger">
+                                    *
+                                </span>
+                                Batch
+                            </label>
+                            @Html.DropDownListFor(Model => Model.Batch, ViewBag.batchlist as SelectList, "Batch", htmlAttributes: new { @class = "form-control" })
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="inputSemester">
+                                <span class="text-danger">
+                                    *
+                                </span>
+                                Program
+                            </label>
+                            @Html.DropDownListFor(Model => Model.Program, ViewBag.programlist as SelectList, "Program", htmlAttributes: new { @class = "form-control" })
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="inputCity">
+                                <span class="text-danger">
+                                    *
+                                </span>
+                                RegNo
+                            </label>
+                            @Html.EditorFor(model => model.RegNo, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.RegNo, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <!-- Password -->
+                    <div class="form-group">
+                        <label for="Password">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Password
+                        </label>
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-row">
+                        <div class="m-2">
+                            <button class="btn btn-primary" type="submit">
+                                LogIn
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        }
+        <!--Teacher Sin Up-->
+        @using (Html.BeginForm("LogIn", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="container rounded formwidthfontcolor" id="TeacherSinUp">
+                <form>
+                    <div class="text-center">
+                        <h1>
+                            Teacher LogIn
+                        </h1>
+                    </div>
+                    <!-- Teacher ID -->
+                    <div class="form-group">
+                        <label for="inputFullName">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Teacher ID
+                        </label>
+                        @Html.EditorFor(model => model.TeacherId, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.TeacherId, "", new { @class = "text-danger" })
+                    </div>
+                    <!-- Password -->
+                    <div class="form-group">
+                        <label for="Password">
+                            <span class="text-danger">
+                                *
+                            </span>
+                            Password
+                        </label>
+                        @Html.EditorFor(model => model.TPassword, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.TPassword, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-row">
+                        <div class="m-2">
+                            <button class="btn btn-primary" type="submit">
+                                LogIn
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        }
+        <div class="row mt-3">
+            <div class="col footerbackgroundcolor">
+                <div class="text-center mt-3 footertextcolor">
+                    <a href="#">
+                        FYPOnline,
+                    </a>
+                    Principal Seat © 2018-COMSATS ®
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#StudentSinUp").show();
+        $("#TeacherSinUp").hide();
+    });
+
+    $(".TeacherSinUp").click(function () {
+        $("#TeacherSinUp").show();
+        $("#StudentSinUp").hide();
+    });
+
+    $(".StudentSinUp").click(function () {
+        $("#TeacherSinUp").hide();
+        $("#StudentSinUp").show();
+    });
+</script>
